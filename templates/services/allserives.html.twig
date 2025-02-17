@@ -1,0 +1,47 @@
+{% extends 'admin.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Liste des Services</h2>
+
+        <!-- Add New Service Button -->
+        <div class="d-flex justify-content-end mb-3">
+            <a href="{{ path('add_services') }}" class="btn btn-success">+</a>
+        </div>
+
+        <div class="row">
+            {% for service in services %}
+                <div class="col-md-4 mb-3">
+                    <a href="{{ path('service_by_id', {'id': service.id}) }}" class="card shadow-sm p-3">
+                        <h5 class="card-title">{{ service.nom }}</h5>
+                        <p class="card-text">{{ service.content[:100] ~ '...' }}</p>
+                        <p><strong>Prix:</strong> {{ service.prix }} €</p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        {# Pagination #}
+        <div class="d-flex justify-content-center mt-3">
+            {% if previous %}
+                <a href="{{ path('all_services', {'page': previous}) }}" class="btn btn-primary me-2">Précédent</a>
+            {% endif %}
+            <span class="align-self-center">Page {{ currentPage }}</span>
+            {% if next %}
+                <a href="{{ path('all_services', {'page': next}) }}" class="btn btn-primary ms-2">Suivant</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

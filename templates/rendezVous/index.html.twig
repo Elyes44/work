@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .form-overlay {
+            position: relative; /* Changé pour s'adapter à l'affichage en liste */
+            width: 100%;
+            max-width: 800px; /* Largeur maximale pour la boîte */
+            margin: 20px auto; /* Centrer la boîte */
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .avatar-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .avatar-container img {
+            margin-right: 10px;
+        }
+
+        .card-text {
+            margin-bottom: 10px;
+        }
+
+        .btn-group {
+            margin-top: 15px;
+        }
+
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .pagination ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pagination li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        .pagination .page-link {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Liste des RendezVous</h5>
+
+                            <!-- Formulaire de recherche -->
+                            <form action="{{ path('afficher_rendezVous') }}" method="GET">
+                                <div class="form-group">
+                                    <label for="search">Rechercher par nomClient, type :</label>
+                                    <input type="text" class="form-control" id="search" name="search" value="{{ app.request.query.get('search') }}">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Rechercher</button>
+                            </form>
+                            <!-- Fin du formulaire de recherche -->
+
+                            <!-- Affichage des RendezVous dans des boîtes -->
+                            {% for recl in RendezVous %}
+                            <div class="form-overlay">
+                                <div class="card-body">
+                                    <h5 class="card-subtitle mb-2 text-muted">Nom: {{ recl.nomClient }}</h5>
+                                    <h7 class="card-subtitle mb-2 text-muted">Créé le: {{ recl.dateHeure|date('d-m-Y') }}</h7>
+                                    <img src="{{ asset('uploads/images/' ~ recl.image) }}" style="width:80px; height:80px;" />
+                                    <div class="mt-3">
+                                        <p class="card-text"><strong>Lieu:</strong> {{ recl.lieu ?? 'Non renseigné' }}</p>
+                                        <p class="card-text"><strong>Antécédents médicaux:</strong> {{ recl.adresse ?? 'Non renseigné' }}</p>
+                                    </div>
+
+                                    <div class="btn-group mt-3" role="group" aria-label="Actions">
+                                        <a href="{{ path('updaterendez', {'id': recl.id}) }}" class="btn btn-primary">Modifier</a>
+                                        <a href="{{ path('deleterendez', {'id': recl.id}) }}" class="btn btn-danger" onclick="return confirm('Supprimer le rendez-vous ?');">Supprimer</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <!-- Fin de l'affichage des RendezVous -->
+
+                            <!-- Pagination -->
+                            <div class="pagination">
+                                {% set currentPage = RendezVous.currentPageNumber %}
+                                {% set previous = currentPage > 1 ? currentPage - 1 : false %}
+                                {% set next = currentPage < RendezVous.pageCount ? currentPage + 1 : false %}
+                                <ul class="pagination">
+                                    {% if previous %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="{{ path('afficher_rendezVous') }}?page={{ previous }}">Précédent</a>
+                                        </li>
+                                    {% endif %}
+                                    <li class="page-item active">
+                                        <span class="page-link">{{ currentPage }}</span>
+                                    </li>
+                                    {% if next %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="{{ path('afficher_rendezVous') }}?page={{ next }}">Suivant</a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                            <!-- Fin de la pagination -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
