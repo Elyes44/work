@@ -2,12 +2,15 @@
 
 // src/Entity/Services.php
 namespace App\Entity;
+
+//control de saisie librebry 
+use Symfony\Component\Validator\Constraints as Assert;
+
 use App\Repository\RendezVousRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\CategorieRepository;
 use App\Repository\ServicesRepository;
 
@@ -31,13 +34,14 @@ class Services
 
     #[ORM\Column(type: 'date')]
     #[Assert\NotBlank(message: "La date de création ne peut pas être vide.")]
+    #[Assert\Type("\DateTimeInterface", message: "La date de création doit être une date valide.")]
     private ?\DateTimeInterface $created = null;
 
-    
     #[ORM\OneToMany(mappedBy: 'services', targetEntity: RendezVous::class, orphanRemoval: true)]
     private Collection $rendezVouss;
 
     #[ORM\Column(type: 'date', nullable: true)]
+    #[Assert\Type("\DateTimeInterface", message: "La date de mise à jour doit être une date valide.")]
     private ?\DateTimeInterface $updated = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
@@ -57,11 +61,10 @@ class Services
     #[Assert\Positive(message: "Le prix doit être un nombre positif.")]
     private ?int $prix = null;
 
-
-
     public function __construct()
     {
-        $this->rendezVouss = new ArrayCollection();
+       // $this->created = new \DateTime(); // Automatically set creation date
+        $this->rendezVouss = new ArrayCollection(); // Initialize collection
     }
     public function getId(): ?int
     {

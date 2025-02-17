@@ -28,17 +28,34 @@ class ServicesType extends AbstractType
             ->add('content', TextType::class, [
                 'label' => 'Description du service',
             ])
-            // Champ pour la date de création
+            // // Champ pour la date de création
+            // ->add('created', DateType::class, [
+            //     'widget' => 'single_text',
+            //     'label' => 'Date de création',
+            // ])
+            // // Champ pour la date de mise à jour
+            // ->add('updated', DateType::class, [
+            //     'widget' => 'single_text',
+            //     'label' => 'Date de mise à jour',
+            //     'required' => false, // Ce champ est facultatif
+            // ])
+
+
             ->add('created', DateType::class, [
-                'widget' => 'single_text',
+                'widget' => 'single_text', // Use a single input for the date
                 'label' => 'Date de création',
+                'required' => true, // Make the field required
+                'empty_data' => null, // Allow empty data to be null
+                'invalid_message' => 'La date de création doit être une date valide.', // Custom error message
             ])
             // Champ pour la date de mise à jour
             ->add('updated', DateType::class, [
-                'widget' => 'single_text',
+                'widget' => 'single_text', // Use a single input for the date
                 'label' => 'Date de mise à jour',
-                'required' => false, // Ce champ est facultatif
-            ])
+                'required' => false, // This field is optional
+                'empty_data' => null, // Allow empty data to be null
+                'invalid_message' => 'La date de mise à jour doit être une date valide.', 
+                ])
             // Champ pour la catégorie
             ->add('categorie', TextType::class, [
                 'label' => 'Catégorie',
