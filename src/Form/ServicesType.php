@@ -28,19 +28,7 @@ class ServicesType extends AbstractType
             ->add('content', TextType::class, [
                 'label' => 'Description du service',
             ])
-            // // Champ pour la date de création
-            // ->add('created', DateType::class, [
-            //     'widget' => 'single_text',
-            //     'label' => 'Date de création',
-            // ])
-            // // Champ pour la date de mise à jour
-            // ->add('updated', DateType::class, [
-            //     'widget' => 'single_text',
-            //     'label' => 'Date de mise à jour',
-            //     'required' => false, // Ce champ est facultatif
-            // ])
-
-
+             // Champ pour la date de création
             ->add('created', DateType::class, [
                 'widget' => 'single_text', // Use a single input for the date
                 'label' => 'Date de création',
@@ -73,11 +61,11 @@ class ServicesType extends AbstractType
             // Champ pour le prix
             ->add('prix', IntegerType::class, [
                 'label' => 'Prix (en euros)',
-            ])
-            // Bouton de soumission
-            ->add('Ajouter', SubmitType::class, [
-                'label' => 'Ajouter le service',
             ]);
+            // Bouton de soumission
+            // ->add('Ajouter', SubmitType::class, [
+            //     'label' => 'Ajouter le service',
+            // ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

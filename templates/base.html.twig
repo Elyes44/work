@@ -67,7 +67,7 @@
 	</div>
 	<nav class="navbar navbar-expand-lg navigation" id="navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">
+			<a class="navbar-brand" href="{{ path('app_index') }}">
 				<img src="images/logo.png" alt="" class="img-fluid">
 			</a>
 
@@ -78,8 +78,9 @@
 
 			<div class="collapse navbar-collapse" id="navbarmain">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item active">
+    <a class="nav-link" href="{{ path('app_index') }}">Home</a>
+</li>					<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
 					<li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
 
 					<li class="nav-item dropdown">
@@ -148,8 +149,10 @@
 					
 					<p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p>
 					<div class="btn-container ">
-						<a href="appoinment.html" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">Make appoinment <i class="icofont-simple-right ml-2  "></i></a>
-					</div>
+					<a href="{{ path('add_rendezVous') }}" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">
+    				Make appointment <i class="icofont-simple-right ml-2"></i>
+					</a>					
+				 </div>
 				</div>
 			</div>
 		</div>

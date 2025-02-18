@@ -17,47 +17,32 @@ class   RendezVous
     #[ORM\Column]
     private ?int $id = null;
 
-   
+    #[ORM\Column(type: 'datetime', nullable: true)] // Allow null values temporarily
+    #[Assert\NotNull(message: "La date et l'heure sont obligatoires.")] // Validation constraint
+    #[Assert\GreaterThan("now", message: "La date doit être postérieure à aujourd'hui.")]
+    private ?\DateTimeInterface $dateHeure = null; 
 
-
-    
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    #[Assert\GreaterThan("now", message: "La date doit être rendezVousérieure à aujourd'hui")]
-     
-    private ?\DateTimeInterface $dateHeure = null;
-    
-
-   
     #[ORM\ManyToOne(targetEntity: Services::class)]
     #[ORM\JoinColumn(nullable: false)]
-    #[Assert\NotNull(message: "Le service  ne peut pas être vide.")]
+    #[Assert\NotNull(message: "Le service ne peut pas être vide.")]
     private ?Services $services = null;
-   
-
-    
-
-
-   
-  
-
-    
-
-
-    
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotNull (message: "Il faut remplire ce chemp")]
+    #[Assert\NotBlank(message: "Le nom du client ne peut pas être vide.")]
+    #[Assert\Length(max: 255, maxMessage: "Le nom du client ne peut pas dépasser {{ limit }} caractères.")]
     private ?string $NomClient = null;
 
-    #[ORM\Column(length: 255)]
-    #[Assert\NotNull (message: "Il faut remplire ce chemp")]
-    private ?string $image = null;
+    #[ORM\Column(length: 255, nullable: true)] // Allow null values
+    private ?string $image = null; 
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 255, maxMessage: "Le lieu ne peut pas dépasser {{ limit }} caractères.")]
     private ?string $lieu = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 255, maxMessage: "Les antécédents médicaux ne peuvent pas dépasser {{ limit }} caractères.")]
     private ?string $adresse = null;
+
 
    
 

@@ -1,84 +1,74 @@
-{% extends 'base.html.twig' %}
+{% extends 'home.html.twig' %}
 
-{% block title %}RendezVous | Écotourisme{% endblock %}
+{% block section %}
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm p-3">
+                    <h2 class="text-center">Prendre un Rendez-vous</h2>
 
-{% block stylesheets %}
-    {{ parent() }}
-    <style>
-        .parallax-window {
-            background-color: #0000 !important;
-        }
-    </style>
-{% endblock %}
+                    {# Form Start #}
+                    {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'needs-validation'}}) }}
 
-{% block low %}
-    <section class="section appoinment">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 ">
-                    <div class="appoinment-content">
-                        <img src="images/about/img-3.jpg" alt="" class="img-fluid">
-                        <div class="emergency">
-                            <h2 class="text-lg"><i class="icofont-phone-circle text-lg"></i>+23 345 67980</h2>
+                        {# Services Field #}
+                        <div class="form-group mb-3">
+                            {{ form_label(form.services, 'Services', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.services, {'attr': {'class': 'form-control' ~ (form.services.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.services) }}
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-10 ">
-                    <div class="appoinment-wrap mt-5 mt-lg-0">
-                        <h2 class="mb-2 title-color">Book Appointment</h2>
-                        <p class="mb-4">Mollitia dicta commodi est recusandae iste, natus eum asperiores corrupti qui velit . Iste dolorum atque similique praesentium soluta.</p>
-                        {% form_theme form 'bootstrap_4_layout.html.twig' %}
-                        {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'appoinment-form'}}) }}
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        {{ form_label(form.nomClient, "Nom du client") }}
-                                        {{ form_widget(form.nomClient, {'attr': {'class': 'form-control', 'placeholder': 'Full Name'}}) }}
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        {{ form_label(form.dateHeure, "Date et heure") }}
-                                        {{ form_widget(form.dateHeure, {'attr': {'class': 'form-control', 'placeholder': 'dd/mm/yyyy'}}) }}
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        {{ form_label(form.lieu, "Lieu") }}
-                                        {{ form_widget(form.lieu, {'attr': {'class': 'form-control', 'placeholder': 'Lieu'}}) }}
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        {{ form_label(form.adresse, "Antécédents médicaux") }}
-                                        {{ form_widget(form.adresse, {'attr': {'class': 'form-control', 'placeholder': 'Antécédents médicaux'}}) }}
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        {{ form_label(form.image, "Image") }}
-                                        {{ form_widget(form.image, {'attr': {'class': 'form-control-file'}}) }}
-                                    </div>
-                                </div>
+
+                        {# Nom Client Field #}
+                        <div class="form-group mb-3">
+                            {{ form_label(form.nomClient, 'Nom du Client', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.nomClient, {'attr': {'class': 'form-control' ~ (form.nomClient.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.nomClient) }}
                             </div>
-                            <div class="form-group-2 mb-4">
-                                <textarea name="message" id="message" class="form-control" rows="6" placeholder="Your Message"></textarea>
+                        </div>
+
+                        {# Date and Time Field #}
+                        <div class="form-group mb-3">
+                            {{ form_label(form.dateHeure, 'Date et Heure', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.dateHeure, {'attr': {'class': 'form-control' ~ (form.dateHeure.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.dateHeure) }}
                             </div>
-                            <button type="submit" class="btn btn-main btn-round-full">Make Appointment <i class="icofont-simple-right ml-2"></i></button>
-                        {{ form_end(form) }}
-                    </div>
+                        </div>
+
+                        {# Image Field #}
+                        <div class="form-group mb-3">
+                            {{ form_label(form.image, 'Image', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.image, {'attr': {'class': 'form-control-file' ~ (form.image.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.image) }}
+                            </div>
+                        </div>
+
+<div class="form-group mb-3">
+    {{ form_label(form.lieu, 'Lieu', {'label_attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.lieu, {'attr': {'class': 'form-control' ~ (form.lieu.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+    <div class="invalid-feedback">
+        {{ form_errors(form.lieu) }}
+    </div>
+</div>
+
+{# Adresse Field #}
+<div class="form-group mb-3">
+    {{ form_label(form.adresse, 'Antécédents médicaux', {'label_attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.adresse, {'attr': {'class': 'form-control' ~ (form.adresse.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+    <div class="invalid-feedback">
+        {{ form_errors(form.adresse) }}
+    </div>
+</div>
+
+                        {# Submit Button #}
+                        <button type="submit" class="btn btn-primary w-100">Prendre Rendez-vous</button>
+
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>
-    </section>
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-    <script>
-        function closeForm() {
-            console.log("Close form called"); // Debug
-            document.getElementById('form-overlay').style.display = 'none';
-        }
-    </script>
+    </div>
 {% endblock %}

@@ -16,6 +16,7 @@ use Knp\Component\Pager\PaginatorInterface; // <-- Ajoutez cette ligne
 class ServicesController extends AbstractController
 {
 
+    
 
 //search of services using name or type
 
@@ -64,7 +65,7 @@ public function index(ServicesRepository $repository, Request $request, Paginato
             $em = $doctrine->getManager();
             $em->persist($services);
             $em->flush();
-            return $this->redirectToRoute('app_services');
+            return $this->redirectToRoute('all_services');
         }
 
         return $this->render('services/add.html.twig', [
@@ -85,7 +86,7 @@ public function index(ServicesRepository $repository, Request $request, Paginato
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $doctrine->getManager();
             $em->flush();
-            return $this->redirectToRoute('app_services');
+            return $this->redirectToRoute('all_services');
         }
 
         return $this->render('services/update.html.twig', [
@@ -102,7 +103,7 @@ public function index(ServicesRepository $repository, Request $request, Paginato
         $em = $doctrine->getManager();
         $em->remove($services);
         $em->flush();
-        return $this->redirectToRoute('app_services');
+        return $this->redirectToRoute('all_services');
     }
 
 
