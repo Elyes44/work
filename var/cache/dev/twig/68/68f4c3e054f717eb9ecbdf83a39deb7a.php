@@ -467,6 +467,6 @@ class __TwigTemplate_e84eec4a0ff7152e805dc823c7bd7661 extends Template
         </div>
     </div>
 </div>
-{% endblock %}", "services/index.html.twig", "C:\\Users\\medel\\Desktop\\ons\\ons\\templates\\services\\index.html.twig");
+{% endblock %}", "services/index.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\templates\\services\\index.html.twig");
     }
 }

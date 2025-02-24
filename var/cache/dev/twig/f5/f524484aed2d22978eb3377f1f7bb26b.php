@@ -116,11 +116,11 @@ class __TwigTemplate_6ffe091ee2af11a6847d00f15d149e57 extends Template
             <thead>
                 <tr>
                     <th>Nom du Client</th>
-                    <th>Date et Heure</th>
+                    <th>Date et Heure de Début</th>
+                    <th>Date et Heure de Fin</th>
                     <th>Service</th>
                     <th>Lieu</th>
                     <th>Antécédents médicaux</th>
-                    <th>Image</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -135,53 +135,41 @@ class __TwigTemplate_6ffe091ee2af11a6847d00f15d149e57 extends Template
             yield "                    <tr>
                         <td>";
             // line 46
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "nomClient", [], "any", false, false, false, 46), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "NomClient", [], "any", false, false, false, 46), "html", null, true);
             yield "</td>
                         <td>";
             // line 47
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "dateHeure", [], "any", false, false, false, 47), "d/m/Y H:i"), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "start", [], "any", false, false, false, 47), "d/m/Y H:i"), "html", null, true);
             yield "</td>
                         <td>";
             // line 48
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "services", [], "any", false, false, false, 48), "nom", [], "any", false, false, false, 48), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "end", [], "any", false, false, false, 48), "d/m/Y H:i"), "html", null, true);
             yield "</td>
                         <td>";
             // line 49
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "lieu", [], "any", false, false, false, 49), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "services", [], "any", false, false, false, 49), "nom", [], "any", false, false, false, 49), "html", null, true);
             yield "</td>
                         <td>";
             // line 50
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "adresse", [], "any", false, false, false, 50), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "lieu", [], "any", false, false, false, 50), "html", null, true);
+            yield "</td>
+                        <td>";
+            // line 51
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "adresse", [], "any", false, false, false, 51), "html", null, true);
             yield "</td>
                         <td>
                             ";
-            // line 52
-            if (CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "image", [], "any", false, false, false, 52)) {
-                // line 53
-                yield "                                <img src=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "image", [], "any", false, false, false, 53))), "html", null, true);
-                yield "\" alt=\"Image\" width=\"100\">
-                            ";
-            } else {
-                // line 55
-                yield "                                Pas d'image
-                            ";
-            }
-            // line 57
-            yield "                        </td>
-                        <td>
-                            ";
-            // line 60
+            // line 54
             yield "                            <a href=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("updaterendez", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "id", [], "any", false, false, false, 60)]), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("updaterendez", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "id", [], "any", false, false, false, 54)]), "html", null, true);
             yield "\" class=\"btn btn-warning btn-sm\" style=\"padding: 0.25rem 0.5rem; font-size: 0.875rem;\">
                                 <i class=\"fas fa-edit\"></i> Modifier
                             </a>
 
                             ";
-            // line 65
+            // line 59
             yield "                            <a href=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deleterendez", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "id", [], "any", false, false, false, 65)]), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deleterendez", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "id", [], "any", false, false, false, 59)]), "html", null, true);
             yield "\" class=\"btn btn-danger btn-sm\" style=\"padding: 0.25rem 0.5rem; font-size: 0.875rem;\" onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer ce rendez-vous ?');\">
                                 <i class=\"fas fa-trash\"></i> Supprimer
                             </a>
@@ -190,9 +178,9 @@ class __TwigTemplate_6ffe091ee2af11a6847d00f15d149e57 extends Template
                 ";
             $context['_iterated'] = true;
         }
-        // line 74
+        // line 68
         if (!$context['_iterated']) {
-            // line 71
+            // line 65
             yield "                    <tr>
                         <td colspan=\"7\" class=\"text-center\">Aucun rendez-vous trouvé.</td>
                     </tr>
@@ -201,16 +189,16 @@ class __TwigTemplate_6ffe091ee2af11a6847d00f15d149e57 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['rendezVous'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 75
+        // line 69
         yield "            </tbody>
         </table>
 
         ";
-        // line 79
+        // line 73
         yield "        <div class=\"d-flex justify-content-center\">
             ";
-        // line 80
-        yield $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->render($this->env, (isset($context["RendezVous"]) || array_key_exists("RendezVous", $context) ? $context["RendezVous"] : (function () { throw new RuntimeError('Variable "RendezVous" does not exist.', 80, $this->source); })()));
+        // line 74
+        yield $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->render($this->env, (isset($context["RendezVous"]) || array_key_exists("RendezVous", $context) ? $context["RendezVous"] : (function () { throw new RuntimeError('Variable "RendezVous" does not exist.', 74, $this->source); })()));
         yield "
         </div>
     </div>
@@ -245,7 +233,7 @@ class __TwigTemplate_6ffe091ee2af11a6847d00f15d149e57 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  213 => 80,  210 => 79,  205 => 75,  196 => 71,  194 => 74,  183 => 65,  175 => 60,  171 => 57,  167 => 55,  161 => 53,  159 => 52,  154 => 50,  150 => 49,  146 => 48,  142 => 47,  138 => 46,  135 => 45,  130 => 44,  115 => 31,  107 => 25,  104 => 24,  90 => 12,  85 => 10,  81 => 8,  76 => 4,  63 => 3,  40 => 1,);
+        return array (  201 => 74,  198 => 73,  193 => 69,  184 => 65,  182 => 68,  171 => 59,  163 => 54,  158 => 51,  154 => 50,  150 => 49,  146 => 48,  142 => 47,  138 => 46,  135 => 45,  130 => 44,  115 => 31,  107 => 25,  104 => 24,  90 => 12,  85 => 10,  81 => 8,  76 => 4,  63 => 3,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -284,29 +272,23 @@ class __TwigTemplate_6ffe091ee2af11a6847d00f15d149e57 extends Template
             <thead>
                 <tr>
                     <th>Nom du Client</th>
-                    <th>Date et Heure</th>
+                    <th>Date et Heure de Début</th>
+                    <th>Date et Heure de Fin</th>
                     <th>Service</th>
                     <th>Lieu</th>
                     <th>Antécédents médicaux</th>
-                    <th>Image</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 {% for rendezVous in RendezVous %}
                     <tr>
-                        <td>{{ rendezVous.nomClient }}</td>
-                        <td>{{ rendezVous.dateHeure|date('d/m/Y H:i') }}</td>
+                        <td>{{ rendezVous.NomClient }}</td>
+                        <td>{{ rendezVous.start|date('d/m/Y H:i') }}</td>
+                        <td>{{ rendezVous.end|date('d/m/Y H:i') }}</td>
                         <td>{{ rendezVous.services.nom }}</td>
                         <td>{{ rendezVous.lieu }}</td>
                         <td>{{ rendezVous.adresse }}</td>
-                        <td>
-                            {% if rendezVous.image %}
-                                <img src=\"{{ asset('uploads/' ~ rendezVous.image) }}\" alt=\"Image\" width=\"100\">
-                            {% else %}
-                                Pas d'image
-                            {% endif %}
-                        </td>
                         <td>
                             {# Edit Button #}
                             <a href=\"{{ path('updaterendez', {'id': rendezVous.id}) }}\" class=\"btn btn-warning btn-sm\" style=\"padding: 0.25rem 0.5rem; font-size: 0.875rem;\">
@@ -332,6 +314,6 @@ class __TwigTemplate_6ffe091ee2af11a6847d00f15d149e57 extends Template
             {{ knp_pagination_render(RendezVous) }}
         </div>
     </div>
-{% endblock %}", "rendezVous/index.html.twig", "C:\\Users\\medel\\Desktop\\work\\templates\\rendezVous\\index.html.twig");
+{% endblock %}", "rendezVous/index.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\templates\\rendezVous\\index.html.twig");
     }
 }

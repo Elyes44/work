@@ -265,6 +265,6 @@ class __TwigTemplate_a27d95769bc434f73d9e335974189aa9 extends Template
         </div>
     </div>
 {% endblock %}
-", "services/allserives.html.twig", "C:\\Users\\medel\\Desktop\\work\\templates\\services\\allserives.html.twig");
+", "services/allserives.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\templates\\services\\allserives.html.twig");
     }
 }

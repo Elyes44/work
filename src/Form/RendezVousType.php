@@ -40,36 +40,53 @@ class RendezVousType extends AbstractType
                     new Assert\NotNull(['message' => 'Le service ne peut pas être vide.']),
                 ],
             ])
-            ->add('nomClient', TextType::class, [
+            ->add('NomClient', TextType::class, [
                 'label' => 'Nom du Client',
                 'constraints' => [
                     new Assert\NotBlank(['message' => 'Le nom du client ne peut pas être vide.']),
                     new Assert\Length(['max' => 255, 'maxMessage' => 'Le nom du client ne peut pas dépasser {{ limit }} caractères.']),
                 ],
             ])
-
-            ->add('dateHeure', DateTimeType::class, [
-                'label' => 'Date et Heure',
+            ->add('title', TextType::class, [
+                'label' => 'Titre du Rendez-Vous',
+                'constraints' => [
+                    new Assert\NotBlank(['message' => 'Le titre du rendez-vous ne peut pas être vide.']),
+                    new Assert\Length(['max' => 255, 'maxMessage' => 'Le titre du rendez-vous ne peut pas dépasser {{ limit }} caractères.']),
+                ],
+            ])
+            ->add('start', DateTimeType::class, [
+                'label' => 'Date et Heure de Début',
                 'widget' => 'single_text', // Use a single input for datetime
                 'required' => true, // Make the field required
                 'empty_data' => null, // Allow empty data to be null
                 'invalid_message' => 'La date et l\'heure doivent être une date valide.', // Custom error message
                 'constraints' => [
-                    new Assert\NotNull(['message' => 'La date et l\'heure sont obligatoires.']),
-                    new Assert\GreaterThan(['value' => 'now', 'message' => 'La date doit être postérieure à aujourd\'hui.']),
+                    new Assert\NotNull(['message' => 'La date et l\'heure de début sont obligatoires.']),
+                    new Assert\GreaterThan(['value' => 'now', 'message' => 'La date de début doit être postérieure à aujourd\'hui.']),
                 ],
             ])
-
-            ->add('image', FileType::class, [
-                'label' => 'Image',
-                'required' => false, // Make the field optional
-                'data_class' => null, // Allow null values
-                'empty_data' => '', // Ensure empty data is an empty string, not null
+            ->add('end', DateTimeType::class, [
+                'label' => 'Date et Heure de Fin',
+                'widget' => 'single_text', // Use a single input for datetime
+                'required' => true, // Make the field required
+                'empty_data' => null, // Allow empty data to be null
+                'invalid_message' => 'La date et l\'heure doivent être une date valide.', // Custom error message
                 'constraints' => [
-                    new Assert\File([
-                        'maxSize' => '1024k',
-                        'mimeTypes' => ['image/jpeg', 'image/png', 'image/gif'],
-                        'mimeTypesMessage' => 'Veuillez télécharger une image valide (JPEG, PNG, GIF).',
+                    new Assert\NotNull(['message' => 'La date et l\'heure de fin sont obligatoires.']),
+                    new Assert\GreaterThan(['value' => 'now', 'message' => 'La date de fin doit être postérieure à aujourd\'hui.']),
+                    new Assert\Expression([
+                        'expression' => 'value >= this.getParent().get("start").getData().modify("+1 hour")',
+                        'message' => 'La date de fin doit être au moins une heure après la date de début.',
+                    ]),
+                ],
+            ])
+            ->add('telephone', TextType::class, [
+                'label' => 'Téléphone',
+                'constraints' => [
+                    new Assert\NotBlank(['message' => 'Le numéro de téléphone est obligatoire.']),
+                    new Assert\Regex([
+                        'pattern' => '/^\+?\d{1,4}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/',
+                        'message' => 'Le numéro de téléphone n\'est pas valide.',
                     ]),
                 ],
             ])
@@ -81,10 +98,10 @@ class RendezVousType extends AbstractType
                 ],
             ])
             ->add('adresse', TextType::class, [
-                'label' => 'Antécédents médicaux',
+                'label' => 'Adresse',
                 'required' => false, // Make the field optional
                 'constraints' => [
-                    new Assert\Length(['max' => 255, 'maxMessage' => 'Les antécédents médicaux ne peuvent pas dépasser {{ limit }} caractères.']),
+                    new Assert\Length(['max' => 255, 'maxMessage' => 'L\'adresse ne peut pas dépasser {{ limit }} caractères.']),
                 ],
             ]);
     }
@@ -96,4 +113,3 @@ class RendezVousType extends AbstractType
         ]);
     }
 }
-    

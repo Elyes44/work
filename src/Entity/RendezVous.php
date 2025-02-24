@@ -17,34 +17,86 @@ class   RendezVous
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: 'datetime', nullable: true)] // Allow null values temporarily
-    #[Assert\NotNull(message: "La date et l'heure sont obligatoires.")] // Validation constraint
-    #[Assert\GreaterThan("now", message: "La date doit être postérieure à aujourd'hui.")]
-    private ?\DateTimeInterface $dateHeure = null; 
+//////////////////////////////////////////////_Calendar_//////////////////////////////////////////////////////////
+    #[ORM\Column(length: 255)]
+    private ?string $title = null;
+
+    #[ORM\Column(type: 'datetime')]
+    private ?\DateTimeInterface $start = null;
+    
+    #[ORM\Column(type: 'datetime')]
+    private ?\DateTimeInterface $end = null;
+///////////////////////////////////////////////_Calendar_/////////////////////////////////////////////////////////
 
     #[ORM\ManyToOne(targetEntity: Services::class)]
     #[ORM\JoinColumn(nullable: false)]
-    #[Assert\NotNull(message: "Le service ne peut pas être vide.")]
     private ?Services $services = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: "Le nom du client ne peut pas être vide.")]
-    #[Assert\Length(max: 255, maxMessage: "Le nom du client ne peut pas dépasser {{ limit }} caractères.")]
     private ?string $NomClient = null;
 
-    #[ORM\Column(length: 255, nullable: true)] // Allow null values
-    private ?string $image = null; 
+    // #[ORM\Column(length: 255, nullable: true)] 
+    // private ?string $image = null; 
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Assert\Length(max: 255, maxMessage: "Le lieu ne peut pas dépasser {{ limit }} caractères.")]
     private ?string $lieu = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Assert\Length(max: 255, maxMessage: "Les antécédents médicaux ne peuvent pas dépasser {{ limit }} caractères.")]
     private ?string $adresse = null;
 
+    #[ORM\Column(type: 'string', length: 20, nullable: true)]
+    private ?string $telephone = null;
 
-   
+
+
+
+
+
+    // Getter and Setter for title
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(?string $title): self
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    // Getter and Setter for start
+    public function getStart(): ?\DateTimeInterface
+    {
+        return $this->start;
+    }
+
+    public function setStart(?\DateTimeInterface $start): self
+    {
+        $this->start = $start;
+        return $this;
+    }
+
+    // Getter and Setter for end
+    public function getEnd(): ?\DateTimeInterface
+    {
+        return $this->end;
+    }
+
+    public function setEnd(?\DateTimeInterface $end): self
+    {
+        $this->end = $end;
+        return $this;
+    }
+    public function getTelephone(): ?string
+    {
+        return $this->telephone;
+    }
+
+    public function setTelephone(?string $telephone): self
+    {
+        $this->telephone = $telephone;
+        return $this;
+    }
 
     public function getServices(): ?Services
     {
@@ -81,22 +133,12 @@ public function setAdresse(?string $adresse): self
     return $this;
 }
 
+public function getId(): ?int
+{
+     return $this->id;
+}
 
 
-
-
-    
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    
-     
-    
-
-   
  public function getDateHeure(): ?\DateTimeInterface
     {
         return $this->dateHeure;
@@ -109,18 +151,6 @@ public function setAdresse(?string $adresse): self
         return $this;
     }
    
-
-   
-
-    
-    
-
-
-
-    
-
-    
-    
 
     public function getNomClient(): ?string
     {
@@ -145,11 +175,5 @@ public function setAdresse(?string $adresse): self
 
         return $this;
     }
-
-
-     
-
-    
-
-    
+   
 }

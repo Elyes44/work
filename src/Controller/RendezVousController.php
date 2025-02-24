@@ -39,6 +39,11 @@ class RendezVousController extends AbstractController
         return $this->render('base.html.twig');
     }
 
+    #[Route('/test', name: 'test')]
+    public function test(): Response
+    {
+        return $this->render('calendar/index.html.twig');
+    }
 
     // #[Route('/rendezVous', name: 'app_rendezVous')]
     // public function index(): Response
@@ -51,69 +56,43 @@ class RendezVousController extends AbstractController
 
 
 
-   #[Route('/addrdv', name: 'add_rendezVous')]
-public function add(Request $request, ManagerRegistry $doctrine, SluggerInterface $slugger): Response
-{
-    // Step 1: Create a new RendezVous entity
-    $RendezVous = new RendezVous();
-
-    // Step 2: Create the form using the RendezVousType form class
-    $form = $this->createForm(RendezVousType::class, $RendezVous);
-
-    // Step 3: Handle the form submission
-    $form->handleRequest($request);
-
-    // Step 4: Debugging - Check if the form is submitted
-    if ($form->isSubmitted()) {
-        // Debugging - Dump form data and entity state
-        dump('Form submitted!');
-        dump('Form data:', $form->getData());
-        dump('RendezVous entity:', $RendezVous);
-
-        // Step 5: Check if the form is valid
-        if ($form->isValid()) {
-            // Debugging - Form is valid
+    #[Route('/addrdv', name: 'add_rendezVous')]
+    public function add(Request $request, ManagerRegistry $doctrine): Response
+    {
+        // Step 1: Create a new RendezVous entity
+        $RendezVous = new RendezVous();
+    
+        // Step 2: Create the form using the RendezVousType form class
+        $form = $this->createForm(RendezVousType::class, $RendezVous);
+    
+        // Step 3: Handle the form submission
+        $form->handleRequest($request);
+    
+        // Step 4: Check if the form is submitted and valid
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Debugging - Form is valid (remove in production)
             dump('Form is valid!');
-
-            // Step 6: Handle file upload (image)
-            $brochureFile = $form->get('image')->getData();
-            if ($brochureFile) {
-                // Generate a unique filename for the uploaded file
-                $originalFilename = pathinfo($brochureFile->getClientOriginalName(), PATHINFO_FILENAME);
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $brochureFile->guessExtension();
-
-                // Move the file to the upload directory
-                $brochureFile->move(
-                    $this->getParameter('upload_directory'),
-                    $newFilename
-                );
-
-                // Set the image filename in the RendezVous entity
-                $RendezVous->setImage($newFilename);
-            }
-
-            // Step 7: Save the RendezVous entity to the database
+    
+            // Step 5: Save the RendezVous entity to the database
             $em = $doctrine->getManager();
             $em->persist($RendezVous);
             $em->flush();
-
-            // Step 8: Add a success flash message
+    
+            // Step 6: Add a success flash message
             $this->addFlash('success', 'Rendez-vous ajouté avec succès!');
-
-            // Step 9: Redirect to the same route (or another route if needed)
+    
+            // Step 7: Redirect to the same route (or another route if needed)
             return $this->redirectToRoute('afficher_rendezVous');
-        } else {
-            // Debugging - Form is not valid, dump errors
+        } elseif ($form->isSubmitted()) {
+            // Debugging - Form is not valid, dump errors (remove in production)
             dump('Form is not valid. Errors:', $form->getErrors(true, false));
         }
+    
+        // Step 8: Render the form template
+        return $this->render('rendezVous/addrendezVous.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
-
-    // Step 10: Render the form template
-    return $this->render('rendezVous/addrendezVous.html.twig', [
-        'form' => $form->createView(),
-    ]);
-}
 
 
 
@@ -164,8 +143,9 @@ public function AfficheRendezVous(RendezVousRepository $repo, PaginatorInterface
 
 
     #[Route('/updaterendez/{id}', name: 'updaterendez')]
-    public function update(RendezVousRepository $repo, $id, Request $request, ManagerRegistry $doctrine, SluggerInterface $slugger): Response
+    public function update(RendezVousRepository $repo, $id, Request $request, ManagerRegistry $doctrine): Response
     {
+        // Find the RendezVous entity by ID
         $RendezVous = $repo->find($id);
     
         // Check if the RendezVous entity exists
@@ -173,40 +153,27 @@ public function AfficheRendezVous(RendezVousRepository $repo, PaginatorInterface
             throw $this->createNotFoundException('Rendez-vous non trouvé.');
         }
     
-        // Store the current image filename
-        $currentImage = $RendezVous->getImage();
-    
+        // Create the form using the RendezVousType form class
         $form = $this->createForm(RendezVousType::class, $RendezVous);
         $form->handleRequest($request);
     
+        // Handle form submission
         if ($form->isSubmitted() && $form->isValid()) {
-            $brochureFile = $form->get('image')->getData();
-    
-            // Only update the image if a new file is uploaded
-            if ($brochureFile) {
-                $originalFilename = pathinfo($brochureFile->getClientOriginalName(), PATHINFO_FILENAME);
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename.'-'.uniqid().'.'.$brochureFile->guessExtension();
-                $brochureFile->move(
-                    $this->getParameter('upload_directory'),
-                    $newFilename
-                );
-                $RendezVous->setImage($newFilename);
-            } else {
-                // Preserve the existing image if no new file is uploaded
-                $RendezVous->setImage($currentImage);
-            }
-    
+            // Save the updated RendezVous entity to the database
             $em = $doctrine->getManager();
             $em->flush();
     
+            // Add a success flash message
             $this->addFlash('success', 'Rendez-vous mis à jour avec succès!');
+    
+            // Redirect to the list of Rendez-vous
             return $this->redirectToRoute('afficher_rendezVous');
         }
     
+        // Render the update form template
         return $this->render('rendezVous/updaterendezVous.html.twig', [
             'form' => $form->createView(),
-            'RendezVous' => $RendezVous, 
+            'RendezVous' => $RendezVous,
         ]);
     }
 
@@ -242,4 +209,4 @@ public function AfficheRendezVous(RendezVousRepository $repo, PaginatorInterface
 }
 
 
-?>                                                  
+?>  

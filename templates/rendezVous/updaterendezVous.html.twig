@@ -7,13 +7,6 @@
                 <div class="card shadow-sm p-3">
                     <h2 class="text-center">Modifier un Rendez-vous</h2>
 
-                    {# Display global form errors at the top #}
-                    {% if form.vars.errors|length > 0 %}
-                        <div class="alert alert-danger">
-                            {{ form_errors(form) }}
-                        </div>
-                    {% endif %}
-
                     {# Form Start #}
                     {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'needs-validation'}}) }}
 
@@ -28,35 +21,48 @@
 
                         {# Nom Client Field #}
                         <div class="form-group mb-3">
-                            {{ form_label(form.nomClient, 'Nom du Client', {'label_attr': {'class': 'form-label'}}) }}
-                            {{ form_widget(form.nomClient, {'attr': {'class': 'form-control' ~ (form.nomClient.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                            {{ form_label(form.NomClient, 'Nom du Client', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.NomClient, {'attr': {'class': 'form-control' ~ (form.NomClient.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
                             <div class="invalid-feedback">
-                                {{ form_errors(form.nomClient) }}
+                                {{ form_errors(form.NomClient) }}
                             </div>
                         </div>
 
-                        {# Date and Time Field #}
+                        {# Title Field #}
                         <div class="form-group mb-3">
-                            {{ form_label(form.dateHeure, 'Date et Heure', {'label_attr': {'class': 'form-label'}}) }}
-                            {{ form_widget(form.dateHeure, {'attr': {'class': 'form-control' ~ (form.dateHeure.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                            {{ form_label(form.title, 'Titre du Rendez-Vous', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.title, {'attr': {'class': 'form-control' ~ (form.title.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
                             <div class="invalid-feedback">
-                                {{ form_errors(form.dateHeure) }}
+                                {{ form_errors(form.title) }}
                             </div>
                         </div>
 
-{# Image Field #}
-<div class="form-group mb-3">
-    {{ form_label(form.image, 'Image', {'label_attr': {'class': 'form-label'}}) }}
-    {{ form_widget(form.image, {'attr': {'class': 'form-control-file' ~ (form.image.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
-    <div class="invalid-feedback">
-        {{ form_errors(form.image) }}
-    </div>
-    {% if RendezVous.image %}
-        <div class="mt-2">
-            <img src="{{ asset('uploads/' ~ RendezVous.image) }}" alt="Current Image" width="100">
-        </div>
-    {% endif %}
-</div>
+                        {# Start Field #}
+                        <div class="form-group mb-3">
+                            {{ form_label(form.start, 'Date et Heure de Début', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.start, {'attr': {'class': 'form-control' ~ (form.start.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.start) }}
+                            </div>
+                        </div>
+
+                        {# End Field #}
+                        <div class="form-group mb-3">
+                            {{ form_label(form.end, 'Date et Heure de Fin', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.end, {'attr': {'class': 'form-control' ~ (form.end.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.end) }}
+                            </div>
+                        </div>
+
+                        {# Telephone Field #}
+                        <div class="form-group mb-3">
+                            {{ form_label(form.telephone, 'Téléphone', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.telephone, {'attr': {'class': 'form-control' ~ (form.telephone.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.telephone) }}
+                            </div>
+                        </div>
 
                         {# Lieu Field #}
                         <div class="form-group mb-3">
@@ -69,7 +75,7 @@
 
                         {# Adresse Field #}
                         <div class="form-group mb-3">
-                            {{ form_label(form.adresse, 'Antécédents médicaux', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_label(form.adresse, 'Adresse', {'label_attr': {'class': 'form-label'}}) }}
                             {{ form_widget(form.adresse, {'attr': {'class': 'form-control' ~ (form.adresse.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
                             <div class="invalid-feedback">
                                 {{ form_errors(form.adresse) }}

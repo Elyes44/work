@@ -1,0 +1,171 @@
+<?php //value%2520%253E%253D%2520this.getParent%2528%2529.get%2528%2522start%2522%2529.getData%2528%2529.modify%2528%2522%252B1%2520hour%2522%2529%252F%252Fcontext%257Cthis%257Cvalue
+
+return [PHP_INT_MAX, static fn () => \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\ExpressionLanguage\\ParsedExpression'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\ExpressionLanguage\\ParsedExpression')),
+        clone ($p['Symfony\\Component\\ExpressionLanguage\\Node\\BinaryNode'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\ExpressionLanguage\\Node\\BinaryNode')),
+        clone ($p['Symfony\\Component\\ExpressionLanguage\\Node\\NameNode'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\ExpressionLanguage\\Node\\NameNode')),
+        clone ($p['Symfony\\Component\\ExpressionLanguage\\Node\\GetAttrNode'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\ExpressionLanguage\\Node\\GetAttrNode')),
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\GetAttrNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\GetAttrNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\GetAttrNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\NameNode'],
+        clone ($p['Symfony\\Component\\ExpressionLanguage\\Node\\ConstantNode'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\ExpressionLanguage\\Node\\ConstantNode')),
+        clone ($p['Symfony\\Component\\ExpressionLanguage\\Node\\ArgumentsNode'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\ExpressionLanguage\\Node\\ArgumentsNode')),
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\ConstantNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\ArgumentsNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\ConstantNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\ConstantNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\ConstantNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\ArgumentsNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\ConstantNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\ArgumentsNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\ConstantNode'],
+        clone $p['Symfony\\Component\\ExpressionLanguage\\Node\\ConstantNode'],
+    ],
+    null,
+    [
+        'Symfony\\Component\\ExpressionLanguage\\Expression' => [
+            'expression' => [
+                'value >= this.getParent().get("start").getData().modify("+1 hour")',
+            ],
+        ],
+        'Symfony\\Component\\ExpressionLanguage\\ParsedExpression' => [
+            'nodes' => [
+                $o[1],
+            ],
+        ],
+        'stdClass' => [
+            'nodes' => [
+                1 => [
+                    'left' => $o[2],
+                    'right' => $o[3],
+                ],
+                11 => [
+                    $o[12],
+                    $o[13],
+                ],
+                17 => [
+                    $o[18],
+                    $o[19],
+                ],
+            ],
+            'attributes' => [
+                1 => [
+                    'operator' => '>=',
+                ],
+                [
+                    'name' => 'value',
+                ],
+                7 => [
+                    'name' => 'this',
+                ],
+                [
+                    'value' => 'getParent',
+                ],
+                10 => [
+                    'value' => 'get',
+                ],
+                12 => [
+                    'value' => 0,
+                ],
+                [
+                    'value' => 'start',
+                ],
+                [
+                    'value' => 'getData',
+                ],
+                16 => [
+                    'value' => 'modify',
+                ],
+                18 => [
+                    'value' => 0,
+                ],
+                [
+                    'value' => '+1 hour',
+                ],
+            ],
+        ],
+        'Symfony\\Component\\ExpressionLanguage\\Node\\ConstantNode' => [
+            'isNullSafe' => [
+                8 => false,
+                10 => false,
+                12 => false,
+                false,
+                false,
+                16 => false,
+                18 => false,
+                false,
+            ],
+            'isIdentifier' => [
+                8 => true,
+                10 => true,
+                12 => false,
+                false,
+                true,
+                16 => true,
+                18 => false,
+                false,
+            ],
+        ],
+        'Symfony\\Component\\ExpressionLanguage\\Node\\ArrayNode' => [
+            'index' => [
+                9 => -1,
+                11 => 0,
+                15 => -1,
+                17 => 0,
+            ],
+        ],
+    ],
+    $o[0],
+    [
+        -6 => [
+            'nodes' => [
+                'node' => $o[7],
+                'attribute' => $o[8],
+                'arguments' => $o[9],
+            ],
+            'attributes' => [
+                'type' => 2,
+                'is_null_coalesce' => false,
+                'is_short_circuited' => false,
+            ],
+        ],
+        -5 => [
+            'nodes' => [
+                'node' => $o[6],
+                'attribute' => $o[10],
+                'arguments' => $o[11],
+            ],
+            'attributes' => [
+                'type' => 2,
+                'is_null_coalesce' => false,
+                'is_short_circuited' => false,
+            ],
+        ],
+        -4 => [
+            'nodes' => [
+                'node' => $o[5],
+                'attribute' => $o[14],
+                'arguments' => $o[15],
+            ],
+            'attributes' => [
+                'type' => 2,
+                'is_null_coalesce' => false,
+                'is_short_circuited' => false,
+            ],
+        ],
+        -3 => [
+            'nodes' => [
+                'node' => $o[4],
+                'attribute' => $o[16],
+                'arguments' => $o[17],
+            ],
+            'attributes' => [
+                'type' => 2,
+                'is_null_coalesce' => false,
+                'is_short_circuited' => false,
+            ],
+        ],
+    ]
+)];

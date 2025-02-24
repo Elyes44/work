@@ -357,3 +357,12 @@ c01da0,127.0.0.1,GET,http://127.0.0.1:8000/,1739878752,,200,request
 859135,127.0.0.1,GET,http://127.0.0.1:8000/add,1739913621,f4eea4,404,request
 f4eea4,127.0.0.1,GET,http://127.0.0.1:8000/add,1739913621,,404,request
 830073,127.0.0.1,GET,http://127.0.0.1:8000/add_services,1739913626,,200,request
+8014fe,127.0.0.1,GET,https://127.0.0.1:8001/,1740395947,,200,request
+6da090,127.0.0.1,GET,https://127.0.0.1:8001/addrdv,1740395961,ae8c28,500,request
+ae8c28,127.0.0.1,GET,https://127.0.0.1:8001/addrdv,1740395961,,500,request
+c8c97c,127.0.0.1,GET,https://127.0.0.1:8001/addrdv,1740396087,,200,request
+eb3046,127.0.0.1,GET,https://127.0.0.1:8001/allrdv,1740396142,f404cd,404,request
+f404cd,127.0.0.1,GET,https://127.0.0.1:8001/allrdv,1740396142,,404,request
+d4d557,127.0.0.1,GET,https://127.0.0.1:8001/addrdv,1740396152,,200,request
+bca7f9,127.0.0.1,POST,https://127.0.0.1:8001/addrdv,1740396187,,302,request
+c47dc9,127.0.0.1,GET,https://127.0.0.1:8001/afficher_rendezVous,1740396188,,200,request

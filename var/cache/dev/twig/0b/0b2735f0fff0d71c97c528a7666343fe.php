@@ -281,6 +281,6 @@ class __TwigTemplate_701507d93ebeb6666d26339513ebdab4 extends Template
         <a href=\"{{ path('all_services') }}\" class=\"btn btn-secondary mt-3\">Retour à la liste des services</a>
     </div>
 {% endblock %}
-", "services/service_detail.html.twig", "C:\\Users\\medel\\Desktop\\ons\\ons\\templates\\services\\service_detail.html.twig");
+", "services/service_detail.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\templates\\services\\service_detail.html.twig");
     }
 }

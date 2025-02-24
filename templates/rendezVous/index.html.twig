@@ -32,29 +32,23 @@
             <thead>
                 <tr>
                     <th>Nom du Client</th>
-                    <th>Date et Heure</th>
+                    <th>Date et Heure de Début</th>
+                    <th>Date et Heure de Fin</th>
                     <th>Service</th>
                     <th>Lieu</th>
                     <th>Antécédents médicaux</th>
-                    <th>Image</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 {% for rendezVous in RendezVous %}
                     <tr>
-                        <td>{{ rendezVous.nomClient }}</td>
-                        <td>{{ rendezVous.dateHeure|date('d/m/Y H:i') }}</td>
+                        <td>{{ rendezVous.NomClient }}</td>
+                        <td>{{ rendezVous.start|date('d/m/Y H:i') }}</td>
+                        <td>{{ rendezVous.end|date('d/m/Y H:i') }}</td>
                         <td>{{ rendezVous.services.nom }}</td>
                         <td>{{ rendezVous.lieu }}</td>
                         <td>{{ rendezVous.adresse }}</td>
-                        <td>
-                            {% if rendezVous.image %}
-                                <img src="{{ asset('uploads/' ~ rendezVous.image) }}" alt="Image" width="100">
-                            {% else %}
-                                Pas d'image
-                            {% endif %}
-                        </td>
                         <td>
                             {# Edit Button #}
                             <a href="{{ path('updaterendez', {'id': rendezVous.id}) }}" class="btn btn-warning btn-sm" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">
