@@ -47,10 +47,14 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
         // line 1
         yield "<!DOCTYPE html>
 <html lang=\"en\">
-  <head>
+<head>
     <meta charset=\"UTF-8\" />
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
     <title>Calendar App</title>
+    <!-- Include Tippy.js -->
+    <script src=\"https://unpkg.com/@popperjs/core@2\"></script>
+    <script src=\"https://unpkg.com/tippy.js@6\"></script>
+    <link rel=\"stylesheet\" href=\"https://unpkg.com/tippy.js@6/animations/scale.css\" />
     <script type=\"importmap\">
       {
         \"imports\": {
@@ -86,10 +90,29 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
           eventResize: function (info) {
             updateEvent(info.event);
           },
-          eventColor: '#3788d8', // Default event color
-          eventBackgroundColor: '#3788d8', // Default event background color
-          eventBorderColor: '#3788d8', // Default event border color
-          eventTextColor: '#ffffff', // Default event text color
+          eventClick: function (info) {
+            if (confirm(\"Are you sure you want to delete this event?\")) {
+              deleteEvent(info.event);
+            }
+          },
+          eventMouseEnter: function (info) {
+            // Add tooltip on hover
+            tippy(info.el, {
+              content: `
+                <strong>\${info.event.title}</strong><br>
+                Start: \${info.event.start.toLocaleString()}<br>
+                End: \${info.event.end ? info.event.end.toLocaleString() : 'N/A'}
+              `,
+              allowHTML: true,
+              animation: 'scale',
+              placement: 'top',
+              interactive: true,
+            });
+          },
+          eventColor: '#3788d8',
+          eventBackgroundColor: '#3788d8',
+          eventBorderColor: '#3788d8',
+          eventTextColor: '#ffffff',
         });
 
         calendar.render();
@@ -107,6 +130,22 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
               'Content-Type': 'application/json',
             },
             body: JSON.stringify(eventData),
+          }).then(response => {
+            if (!response.ok) {
+              alert('Failed to update event.');
+            }
+          });
+        }
+
+        function deleteEvent(event) {
+          fetch(`/deleterendez/\${event.id}`, {
+            method: 'DELETE',
+          }).then(response => {
+            if (response.ok) {
+              event.remove();
+            } else {
+              alert('Failed to delete event.');
+            }
           });
         }
       });
@@ -184,10 +223,10 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
         }
       }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div id=\"calendar\"></div>
-  </body>
+</body>
 </html>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -218,10 +257,14 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
     {
         return new Source("<!DOCTYPE html>
 <html lang=\"en\">
-  <head>
+<head>
     <meta charset=\"UTF-8\" />
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
     <title>Calendar App</title>
+    <!-- Include Tippy.js -->
+    <script src=\"https://unpkg.com/@popperjs/core@2\"></script>
+    <script src=\"https://unpkg.com/tippy.js@6\"></script>
+    <link rel=\"stylesheet\" href=\"https://unpkg.com/tippy.js@6/animations/scale.css\" />
     <script type=\"importmap\">
       {
         \"imports\": {
@@ -257,10 +300,29 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
           eventResize: function (info) {
             updateEvent(info.event);
           },
-          eventColor: '#3788d8', // Default event color
-          eventBackgroundColor: '#3788d8', // Default event background color
-          eventBorderColor: '#3788d8', // Default event border color
-          eventTextColor: '#ffffff', // Default event text color
+          eventClick: function (info) {
+            if (confirm(\"Are you sure you want to delete this event?\")) {
+              deleteEvent(info.event);
+            }
+          },
+          eventMouseEnter: function (info) {
+            // Add tooltip on hover
+            tippy(info.el, {
+              content: `
+                <strong>\${info.event.title}</strong><br>
+                Start: \${info.event.start.toLocaleString()}<br>
+                End: \${info.event.end ? info.event.end.toLocaleString() : 'N/A'}
+              `,
+              allowHTML: true,
+              animation: 'scale',
+              placement: 'top',
+              interactive: true,
+            });
+          },
+          eventColor: '#3788d8',
+          eventBackgroundColor: '#3788d8',
+          eventBorderColor: '#3788d8',
+          eventTextColor: '#ffffff',
         });
 
         calendar.render();
@@ -278,6 +340,22 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
               'Content-Type': 'application/json',
             },
             body: JSON.stringify(eventData),
+          }).then(response => {
+            if (!response.ok) {
+              alert('Failed to update event.');
+            }
+          });
+        }
+
+        function deleteEvent(event) {
+          fetch(`/deleterendez/\${event.id}`, {
+            method: 'DELETE',
+          }).then(response => {
+            if (response.ok) {
+              event.remove();
+            } else {
+              alert('Failed to delete event.');
+            }
           });
         }
       });
@@ -355,10 +433,10 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
         }
       }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div id=\"calendar\"></div>
-  </body>
+</body>
 </html>", "calendar.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\templates\\calendar.html.twig");
     }
 }

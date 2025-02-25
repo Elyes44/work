@@ -70,3 +70,9 @@ e6ebea,127.0.0.1,GET,https://127.0.0.1:8001/afficher_rendezVous,1740524893,,200,
 428a79,127.0.0.1,GET,https://127.0.0.1:8001/afficher_rendezVous,1740525292,,200,request
 4e069c,127.0.0.1,GET,https://127.0.0.1:8001/afficher_rendezVous,1740525445,,200,request
 96fa44,127.0.0.1,GET,https://127.0.0.1:8001/afficher_rendezVous,1740525569,,200,request
+19d4aa,127.0.0.1,GET,https://127.0.0.1:8001/cal,1740526256,,200,request
+fa78b5,127.0.0.1,GET,https://127.0.0.1:8001/rendezvous/events?end=2025-03-09T00%3A00%3A00%2B01%3A00&start=2025-01-26T00%3A00%3A00%2B01%3A00,1740526257,,200,request
+99a62e,127.0.0.1,DELETE,https://127.0.0.1:8001/deleterendez/2,1740526307,,302,request
+1240ee,127.0.0.1,DELETE,https://127.0.0.1:8001/afficher_rendezVous,1740526308,,200,request
+3de0c7,127.0.0.1,GET,https://127.0.0.1:8001/cal,1740526456,,200,request
+4843ba,127.0.0.1,GET,https://127.0.0.1:8001/rendezvous/events?end=2025-03-09T00%3A00%3A00%2B01%3A00&start=2025-01-26T00%3A00%3A00%2B01%3A00,1740526458,,200,request

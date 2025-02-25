@@ -16,7 +16,6 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/cal' => [[['_route' => 'cal', '_controller' => 'App\\Controller\\RendezVousController::cal'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_index', '_controller' => 'App\\Controller\\RendezVousController::indeex'], null, null, null, false, false, null]],
-        '/test' => [[['_route' => 'test', '_controller' => 'App\\Controller\\RendezVousController::test'], null, null, null, false, false, null]],
         '/addrdv' => [[['_route' => 'add_rendezVous', '_controller' => 'App\\Controller\\RendezVousController::add'], null, null, null, false, false, null]],
         '/afficher_rendezVous' => [[['_route' => 'afficher_rendezVous', '_controller' => 'App\\Controller\\RendezVousController::AfficheRendezVous'], null, null, null, false, false, null]],
         '/search' => [[['_route' => 'app_search', '_controller' => 'App\\Controller\\RendezVousController::search'], null, null, null, false, false, null]],
