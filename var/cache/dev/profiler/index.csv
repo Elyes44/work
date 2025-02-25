@@ -76,3 +76,7 @@ fa78b5,127.0.0.1,GET,https://127.0.0.1:8001/rendezvous/events?end=2025-03-09T00%
 1240ee,127.0.0.1,DELETE,https://127.0.0.1:8001/afficher_rendezVous,1740526308,,200,request
 3de0c7,127.0.0.1,GET,https://127.0.0.1:8001/cal,1740526456,,200,request
 4843ba,127.0.0.1,GET,https://127.0.0.1:8001/rendezvous/events?end=2025-03-09T00%3A00%3A00%2B01%3A00&start=2025-01-26T00%3A00%3A00%2B01%3A00,1740526458,,200,request
+561730,127.0.0.1,GET,https://127.0.0.1:8001/cal,1740526796,,200,request
+0cd654,127.0.0.1,GET,https://127.0.0.1:8001/rendezvous/events?end=2025-03-09T00%3A00%3A00%2B01%3A00&start=2025-01-26T00%3A00%3A00%2B01%3A00,1740526797,,200,request
+dc9fe3,127.0.0.1,GET,https://127.0.0.1:8001/,1740526801,,200,request
+273266,127.0.0.1,POST,https://127.0.0.1:8001/rendezvous/update,1740526935,,200,request
