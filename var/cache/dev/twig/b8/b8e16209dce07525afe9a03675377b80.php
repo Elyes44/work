@@ -85,6 +85,25 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
       }
     }
   </script>
+
+  <!-- Custom CSS for Card and Shadow -->
+  <style>
+    .calendar-card {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 1100px;
+      width: 90%;
+    }
+
+    .calendar-card #calendar {
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body id=\"top\">
 
@@ -113,7 +132,7 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
   <nav class=\"navbar navbar-expand-lg navigation\" id=\"navbar\">
     <div class=\"container\">
       <a class=\"navbar-brand\" href=\"";
-        // line 68
+        // line 87
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_index");
         yield "\">
         <img src=\"images/logo.png\" alt=\"\" class=\"img-fluid\">
@@ -127,7 +146,7 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
       <div class=\"collapse navbar-collapse\" id=\"navbarmain\">
         <ul class=\"navbar-nav ml-auto\">
           <li class=\"nav-item active\"><a class=\"nav-link\" href=\"";
-        // line 79
+        // line 98
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_index");
         yield "\">Home</a></li>
           <li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">About</a></li>
@@ -138,15 +157,15 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
               aria-haspopup=\"true\" aria-expanded=\"false\">Rendez vous <i class=\"icofont-thin-down\"></i></a>
             <ul class=\"dropdown-menu\" aria-labelledby=\"dropdown02\">
               <li><a class=\"dropdown-item\" href=\"";
-        // line 87
+        // line 106
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_rendezVous");
         yield "\">To make an appointment</a></li>
               <li><a class=\"dropdown-item\" href=\"";
-        // line 88
+        // line 107
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_services");
         yield "\">Available services</a></li>
               <li><a class=\"dropdown-item\" href=\"";
-        // line 89
+        // line 108
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("afficher_rendezVous");
         yield "\">Requested appointments</a></li>
             </ul>
@@ -179,7 +198,7 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
 
 <!-- Calendar Section -->
 <section class=\"section\">
-  <div class=\"container\">
+  <div class=\"calendar-card\">
     <div id=\"calendar\"></div>
   </div>
 </section>
@@ -401,7 +420,7 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  150 => 89,  146 => 88,  142 => 87,  131 => 79,  117 => 68,  48 => 1,);
+        return array (  169 => 108,  165 => 107,  161 => 106,  150 => 98,  136 => 87,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -446,6 +465,25 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
       }
     }
   </script>
+
+  <!-- Custom CSS for Card and Shadow -->
+  <style>
+    .calendar-card {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 1100px;
+      width: 90%;
+    }
+
+    .calendar-card #calendar {
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body id=\"top\">
 
@@ -525,7 +563,7 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
 
 <!-- Calendar Section -->
 <section class=\"section\">
-  <div class=\"container\">
+  <div class=\"calendar-card\">
     <div id=\"calendar\"></div>
   </div>
 </section>
