@@ -16,6 +16,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse; 
+
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
@@ -24,14 +27,12 @@ class RendezVousController extends AbstractController
 {
 
 
+    #[Route('/cal', name: 'cal')]
+    public function cal(): Response
+    {
+        return $this->render('calendar.html.twig');
+    }
 
-
-
-    // #[Route('/indexx', name: 'app_indexx')]
-    // public function indexx(): Response
-    // {
-    //     return $this->render('client/index.html.twig');
-    // }
 
     #[Route('/', name: 'app_index')]
     public function indeex(): Response
@@ -39,23 +40,7 @@ class RendezVousController extends AbstractController
         return $this->render('base.html.twig');
     }
 
-    #[Route('/test', name: 'test')]
-    public function test(): Response
-    {
-        return $this->render('calendar/index.html.twig');
-    }
-
-    // #[Route('/rendezVous', name: 'app_rendezVous')]
-    // public function index(): Response
-    // {
-    //     return $this->render('admin.html.twig', [
-    //         'controller_name' => 'RendezVousController',
-    //     ]);
-    // }
-
-
-
-
+    
     #[Route('/addrdv', name: 'add_rendezVous')]
     public function add(Request $request, ManagerRegistry $doctrine): Response
     {
@@ -203,6 +188,68 @@ public function AfficheRendezVous(RendezVousRepository $repo, PaginatorInterface
             'RendezVous' => $RendezVous,
             'searchTerm' => $searchTerm,
         ]);
+    }
+
+
+
+
+    #[Route('/rendezvous/events', name: 'rendezvous_events', methods: ['GET'])]
+    public function getEvents(ManagerRegistry $doctrine, LoggerInterface $logger): JsonResponse 
+    {
+        $repository = $doctrine->getRepository(RendezVous::class);
+        $rendezvous = $repository->findAll();
+        $events = [];
+    
+        foreach ($rendezvous as $rdv) {
+            try {
+                $events[] = [
+                    'id' => $rdv->getId(),
+                    'title' => $rdv->getTitle(),
+                    'start' => $rdv->getStart()->format('Y-m-d\TH:i:s'),
+                    'end' => $rdv->getEnd()->format('Y-m-d\TH:i:s'),
+                ];
+            } catch (\Exception $e) {
+                $logger->error('Error processing RendezVous: ' . $e->getMessage());
+            }
+        }
+    
+        return $this->json($events); 
+    }
+
+
+    #[Route('/rendezvous/update', name: 'rendezvous_update', methods: ['POST'])]
+    public function updateCalendar(Request $request, ManagerRegistry $doctrine, LoggerInterface $logger): JsonResponse
+    {
+        try {
+            // Decode the JSON data from the request
+            $data = json_decode($request->getContent(), true);
+    
+            // Get the entity manager and repository
+            $entityManager = $doctrine->getManager();
+            $repository = $doctrine->getRepository(RendezVous::class);
+    
+            // Find the RendezVous entity by ID
+            $rdv = $repository->find($data['id']);
+    
+            // Check if the RendezVous entity exists
+            if (!$rdv) {
+                return new JsonResponse(['error' => 'RendezVous not found'], 404);
+            }
+    
+            // Update the start and end fields
+            $rdv->setStart(new \DateTime($data['start']));
+            $rdv->setEnd(new \DateTime($data['end']));
+    
+            // Save the changes to the database
+            $entityManager->flush();
+    
+            // Return a success response
+            return new JsonResponse(['success' => true]);
+        } catch (\Exception $e) {
+            // Log the error and return an error response
+            $logger->error('Error updating RendezVous: ' . $e->getMessage());
+            return new JsonResponse(['error' => 'Internal Server Error'], 500);
+        }
     }
 
 

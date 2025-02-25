@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar App</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "@fullcalendar/core": "https://cdn.skypack.dev/@fullcalendar/core@6.1.15",
+          "@fullcalendar/daygrid": "https://cdn.skypack.dev/@fullcalendar/daygrid@6.1.15",
+          "@fullcalendar/timegrid": "https://cdn.skypack.dev/@fullcalendar/timegrid@6.1.15",
+          "@fullcalendar/interaction": "https://cdn.skypack.dev/@fullcalendar/interaction@6.1.15"
+        }
+      }
+    </script>
+    <script type="module">
+      import { Calendar } from '@fullcalendar/core';
+      import dayGridPlugin from '@fullcalendar/daygrid';
+      import timeGridPlugin from '@fullcalendar/timegrid';
+      import interactionPlugin from '@fullcalendar/interaction';
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const calendarEl = document.getElementById('calendar');
+
+        const calendar = new Calendar(calendarEl, {
+          plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
+          initialView: 'dayGridMonth',
+          events: '/rendezvous/events',
+          editable: true,
+          headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay',
+          },
+          eventDrop: function (info) {
+            updateEvent(info.event);
+          },
+          eventResize: function (info) {
+            updateEvent(info.event);
+          },
+          eventColor: '#3788d8', // Default event color
+          eventBackgroundColor: '#3788d8', // Default event background color
+          eventBorderColor: '#3788d8', // Default event border color
+          eventTextColor: '#ffffff', // Default event text color
+        });
+
+        calendar.render();
+
+        function updateEvent(event) {
+          const eventData = {
+            id: event.id,
+            start: event.start.toISOString(),
+            end: event.end ? event.end.toISOString() : null,
+          };
+
+          fetch('/rendezvous/update', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(eventData),
+          });
+        }
+      });
+    </script>
+    <style>
+      /* General Styling */
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      /* Calendar Container */
+      #calendar {
+        max-width: 1100px;
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Header Toolbar */
+      .fc-header-toolbar {
+        margin-bottom: 20px;
+      }
+
+      .fc-toolbar-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .fc-button {
+        background-color: #3788d8;
+        border: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .fc-button:hover {
+        background-color: #2a6bb0;
+      }
+
+      /* Event Styling */
+      .fc-event {
+        border-radius: 4px;
+        padding: 5px;
+        font-size: 0.9em;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .fc-toolbar-title {
+          font-size: 1.2em;
+        }
+
+        .fc-button {
+          padding: 6px 10px;
+          font-size: 0.8em;
+        }
+
+        #calendar {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="calendar"></div>
+  </body>
+</html>
