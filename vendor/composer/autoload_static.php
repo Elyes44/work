@@ -51,6 +51,7 @@ class ComposerStaticInit70b50968b87c53bb7fc98d85f2e999d3
         ),
         'T' => 
         array (
+            'Twilio\\' => 7,
             'Twig\\Extra\\TwigExtraBundle\\' => 27,
             'Twig\\' => 5,
         ),
@@ -220,6 +221,10 @@ class ComposerStaticInit70b50968b87c53bb7fc98d85f2e999d3
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Twilio\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twilio/sdk/src/Twilio',
         ),
         'Twig\\Extra\\TwigExtraBundle\\' => 
         array (
@@ -579,8 +584,8 @@ class ComposerStaticInit70b50968b87c53bb7fc98d85f2e999d3
         ),
         'League\\Uri\\' => 
         array (
-            0 => __DIR__ . '/..' . '/league/uri-interfaces/src',
-            1 => __DIR__ . '/..' . '/league/uri/src',
+            0 => __DIR__ . '/..' . '/league/uri/src',
+            1 => __DIR__ . '/..' . '/league/uri-interfaces/src',
             2 => __DIR__ . '/..' . '/league/uri-parser/src',
         ),
         'Knp\\Component\\' => 

@@ -542,6 +542,6 @@ class __TwigTemplate_e64c84a73cced14b3fd52dffaa80adb1 extends Template
         }
     }
 </script>
-", "@WebProfiler/Profiler/base_js.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base_js.html.twig");
+", "@WebProfiler/Profiler/base_js.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base_js.html.twig");
     }
 }

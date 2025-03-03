@@ -211,6 +211,6 @@ class __TwigTemplate_5bbe876c5adf0ee6c46845f561fbab57 extends Template
         </a>
     {% endif %}
 </div>
-", "@KnpPaginator/Pagination/semantic_ui_pagination.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\semantic_ui_pagination.html.twig");
+", "@KnpPaginator/Pagination/semantic_ui_pagination.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\semantic_ui_pagination.html.twig");
     }
 }

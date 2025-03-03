@@ -341,6 +341,6 @@ class __TwigTemplate_b3b008d753d8c71368cfe131d246f1a3 extends Template
         </ul>
     </nav>
 {% endif %}
-", "@KnpPaginator/Pagination/bulma_pagination.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\bulma_pagination.html.twig");
+", "@KnpPaginator/Pagination/bulma_pagination.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\bulma_pagination.html.twig");
     }
 }

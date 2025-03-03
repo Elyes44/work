@@ -151,6 +151,6 @@ class __TwigTemplate_78eff1d67bcf90d868276c1a43bb9e15 extends Template
         {% endfor %}
     </tbody>
 </table>
-", "@WebProfiler/Profiler/bag.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\bag.html.twig");
+", "@WebProfiler/Profiler/bag.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\bag.html.twig");
     }
 }

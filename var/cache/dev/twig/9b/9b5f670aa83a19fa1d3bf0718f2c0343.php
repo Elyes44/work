@@ -110,6 +110,6 @@ class __TwigTemplate_4863dca3f0a59f369edbb419894abade extends Template
        </form>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\header.html.twig");
     }
 }

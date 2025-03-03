@@ -138,6 +138,6 @@ class __TwigTemplate_f59fb061ca74768b30ad1530a959d7a1 extends Template
     </span>
     {{ title }}
 </a>
-", "@KnpPaginator/Pagination/semantic_ui_sortable_link.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\semantic_ui_sortable_link.html.twig");
+", "@KnpPaginator/Pagination/semantic_ui_sortable_link.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\semantic_ui_sortable_link.html.twig");
     }
 }

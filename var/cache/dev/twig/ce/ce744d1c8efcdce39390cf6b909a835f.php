@@ -1617,6 +1617,6 @@ class __TwigTemplate_e9779dc0c19786e3f3b15b5eb59d7e58 extends Template
 {%endblock%}
   </body>
   </html>
-", "base.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\medel\\Desktop\\work\\templates\\base.html.twig");
     }
 }

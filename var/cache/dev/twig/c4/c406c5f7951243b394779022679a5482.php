@@ -531,6 +531,6 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
 
 </html>
 
-", "admin.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\templates\\admin.html.twig");
+", "admin.html.twig", "C:\\Users\\medel\\Desktop\\work\\templates\\admin.html.twig");
     }
 }

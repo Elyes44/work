@@ -1866,6 +1866,6 @@ class __TwigTemplate_005fa61b5f6c8a81c527bbe88f9ffcff extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\doctrine\\doctrine-bundle\\templates\\Collector\\db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\doctrine\\doctrine-bundle\\templates\\Collector\\db.html.twig");
     }
 }

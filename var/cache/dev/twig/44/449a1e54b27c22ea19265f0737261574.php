@@ -233,6 +233,6 @@ class __TwigTemplate_cacc73169cd01230f9c9431333ddb3c7 extends Template
     word-wrap: break-word;
     word-break: break-all;
 }
-", "@WebProfiler/Profiler/open.css.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\open.css.twig");
+", "@WebProfiler/Profiler/open.css.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\open.css.twig");
     }
 }

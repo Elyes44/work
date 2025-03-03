@@ -327,6 +327,6 @@ class __TwigTemplate_568833fa3bdbe53d2cf508e3afe4c54e extends Template
         {{- form_rest(form) -}}
     </table>
 {%- endblock form_widget_compound -%}
-", "form_table_layout.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\symfony\\twig-bridge\\Resources\\views\\Form\\form_table_layout.html.twig");
+", "form_table_layout.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\symfony\\twig-bridge\\Resources\\views\\Form\\form_table_layout.html.twig");
     }
 }

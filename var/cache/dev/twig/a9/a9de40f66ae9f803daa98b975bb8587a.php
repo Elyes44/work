@@ -146,6 +146,6 @@ class __TwigTemplate_cf5f5e71d7822f824191e54025b6ad8d extends Template
     </span>
 {{ title }}
 </a>
-", "@KnpPaginator/Pagination/uikit_v3_sortable.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\uikit_v3_sortable.html.twig");
+", "@KnpPaginator/Pagination/uikit_v3_sortable.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\uikit_v3_sortable.html.twig");
     }
 }

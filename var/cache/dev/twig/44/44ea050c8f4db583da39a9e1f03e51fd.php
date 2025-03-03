@@ -98,6 +98,6 @@ class __TwigTemplate_b68f828ebd1260366bb437ec868f0423 extends Template
     public function getSourceContext(): Source
     {
         return new Source("<a{% for attr, value in options %} {{ attr }}=\"{{ value }}\"{% endfor %}>{{ title }}</a>
-", "@KnpPaginator/Pagination/sortable_link.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\sortable_link.html.twig");
+", "@KnpPaginator/Pagination/sortable_link.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\sortable_link.html.twig");
     }
 }

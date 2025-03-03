@@ -180,6 +180,6 @@ class __TwigTemplate_cf9ebeac9d8e2ea8deb67c1fb792068d extends Template
     <button>{{ options.button }}</button>
 
 </form>
-", "@KnpPaginator/Pagination/filtration.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\filtration.html.twig");
+", "@KnpPaginator/Pagination/filtration.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\filtration.html.twig");
     }
 }

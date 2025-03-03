@@ -422,6 +422,6 @@ class __TwigTemplate_02d97caf9208e832c1c5d7ee2b6df460 extends Template
 
     </div>
 {%- endif %}
-", "@WebProfiler/Profiler/_request_summary.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\_request_summary.html.twig");
+", "@WebProfiler/Profiler/_request_summary.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\_request_summary.html.twig");
     }
 }

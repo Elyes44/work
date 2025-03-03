@@ -482,6 +482,6 @@ class __TwigTemplate_8f9f21063cbd08ef96f78a27931b95b6 extends Template
     {%- set widget_class = widget_class|default('mr-2') -%}
     {{- parent() -}}
 {%- endblock radio_widget -%}
-", "tailwind_2_layout.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\symfony\\twig-bridge\\Resources\\views\\Form\\tailwind_2_layout.html.twig");
+", "tailwind_2_layout.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\symfony\\twig-bridge\\Resources\\views\\Form\\tailwind_2_layout.html.twig");
     }
 }

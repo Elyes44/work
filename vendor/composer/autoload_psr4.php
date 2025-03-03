@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
+    'Twilio\\' => array($vendorDir . '/twilio/sdk/src/Twilio'),
     'Twig\\Extra\\TwigExtraBundle\\' => array($vendorDir . '/twig/extra-bundle'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Symfony\\WebpackEncoreBundle\\' => array($vendorDir . '/symfony/webpack-encore-bundle/src'),
@@ -97,7 +98,7 @@ return array(
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Masterminds\\' => array($vendorDir . '/masterminds/html5/src'),
     'LibDNS\\' => array($vendorDir . '/daverandom/libdns/src'),
-    'League\\Uri\\' => array($vendorDir . '/league/uri-interfaces/src', $vendorDir . '/league/uri/src', $vendorDir . '/league/uri-parser/src'),
+    'League\\Uri\\' => array($vendorDir . '/league/uri/src', $vendorDir . '/league/uri-interfaces/src', $vendorDir . '/league/uri-parser/src'),
     'Knp\\Component\\' => array($vendorDir . '/knplabs/knp-components/src/Knp/Component'),
     'Knp\\Bundle\\PaginatorBundle\\' => array($vendorDir . '/knplabs/knp-paginator-bundle/src'),
     'Kelunik\\Certificate\\' => array($vendorDir . '/kelunik/certificate/src'),

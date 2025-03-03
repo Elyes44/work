@@ -216,6 +216,6 @@ class __TwigTemplate_7775d1bc69f429149cdaa2fac358430f extends Template
         </div>
     </div>
 {% endif %}
-", "@KnpPaginator/Pagination/tailwindcss_pagination.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\tailwindcss_pagination.html.twig");
+", "@KnpPaginator/Pagination/tailwindcss_pagination.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\tailwindcss_pagination.html.twig");
     }
 }

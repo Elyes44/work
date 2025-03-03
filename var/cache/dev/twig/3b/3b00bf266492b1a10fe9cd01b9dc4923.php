@@ -738,6 +738,6 @@ hello
     <script src=\"js/script.js\"></script>
 {%endblock%}
   </body>
-  </html>", "home.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\templates\\home.html.twig");
+  </html>", "home.html.twig", "C:\\Users\\medel\\Desktop\\work\\templates\\home.html.twig");
     }
 }

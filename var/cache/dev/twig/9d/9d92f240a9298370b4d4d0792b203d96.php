@@ -170,6 +170,6 @@ class __TwigTemplate_b0a3d500e80a5e0c7b29d2ec95aeaec6 extends Template
     </div>
 
 </form>
-", "@KnpPaginator/Pagination/twitter_bootstrap_v4_filtration.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\twitter_bootstrap_v4_filtration.html.twig");
+", "@KnpPaginator/Pagination/twitter_bootstrap_v4_filtration.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\twitter_bootstrap_v4_filtration.html.twig");
     }
 }

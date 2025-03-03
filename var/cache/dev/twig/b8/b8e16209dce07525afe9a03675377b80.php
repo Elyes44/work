@@ -754,6 +754,6 @@ class __TwigTemplate_c210f3bc9d59cbbebe1f69a5ebd00bb7 extends Template
   });
 </script>
 </body>
-</html>", "calendar.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\templates\\calendar.html.twig");
+</html>", "calendar.html.twig", "C:\\Users\\medel\\Desktop\\work\\templates\\calendar.html.twig");
     }
 }

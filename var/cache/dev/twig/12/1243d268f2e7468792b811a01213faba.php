@@ -2219,6 +2219,6 @@ class __TwigTemplate_c9edb22e9af1c7dcc9f82512b475aa78 extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/form.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\form.html.twig");
+", "@WebProfiler/Collector/form.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\form.html.twig");
     }
 }

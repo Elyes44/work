@@ -300,6 +300,6 @@ class __TwigTemplate_6270677c0e9977d34908530aed004576 extends Template
         {% endif %}
     </ul>
 {% endif %}
-", "@KnpPaginator/Pagination/materialize_pagination.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\materialize_pagination.html.twig");
+", "@KnpPaginator/Pagination/materialize_pagination.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\materialize_pagination.html.twig");
     }
 }

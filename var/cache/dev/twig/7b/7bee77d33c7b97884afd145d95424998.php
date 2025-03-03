@@ -331,6 +331,6 @@ class __TwigTemplate_91fc05da157839a616ab1cbd2fd874f3 extends Template
             {% endif %}
         </ul>
 {% endif %}
-", "@KnpPaginator/Pagination/uikit_v3_pagination.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\uikit_v3_pagination.html.twig");
+", "@KnpPaginator/Pagination/uikit_v3_pagination.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\uikit_v3_pagination.html.twig");
     }
 }

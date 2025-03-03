@@ -95,6 +95,6 @@ class __TwigTemplate_8cdb4d413641172def3f494468d2fd06 extends Template
  */
 #}
 {% extends '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig' %}
-", "@KnpPaginator/Pagination/bootstrap_v5_pagination.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\bootstrap_v5_pagination.html.twig");
+", "@KnpPaginator/Pagination/bootstrap_v5_pagination.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\bootstrap_v5_pagination.html.twig");
     }
 }

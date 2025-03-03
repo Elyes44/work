@@ -757,6 +757,6 @@ class __TwigTemplate_26d886ae77df071d55582f854ba49ead extends Template
         </div>
     </div>
 {% endmacro %}
-", "@WebProfiler/Collector/cache.html.twig", "C:\\Users\\medel\\Desktop\\New folder (2)\\work\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\cache.html.twig");
+", "@WebProfiler/Collector/cache.html.twig", "C:\\Users\\medel\\Desktop\\work\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\cache.html.twig");
     }
 }
