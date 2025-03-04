@@ -55,7 +55,7 @@ return [
                     .'|rendez/([^/]++)(*:287)'
                     .'|_services/([^/]++)(*:313)'
                 .')'
-                .'|/service/([^/]++)(*:339)'
+                .'|/serviceet/([^/]++)(*:341)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -71,8 +71,8 @@ return [
         253 => [[['_route' => 'delete_services', '_controller' => 'App\\Controller\\ServicesController::delete'], ['id'], null, null, false, true, null]],
         287 => [[['_route' => 'updaterendez', '_controller' => 'App\\Controller\\RendezVousController::update'], ['id'], null, null, false, true, null]],
         313 => [[['_route' => 'update_services', '_controller' => 'App\\Controller\\ServicesController::update'], ['id'], null, null, false, true, null]],
-        339 => [
-            [['_route' => 'service_by_id', '_controller' => 'App\\Controller\\ServicesController::getServiceById'], ['id'], null, null, false, true, null],
+        341 => [
+            [['_route' => 'serviceet', '_controller' => 'App\\Controller\\ServicesController::getServiceById'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

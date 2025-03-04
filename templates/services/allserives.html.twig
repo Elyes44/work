@@ -93,8 +93,11 @@
                                         <div class="card-body">
                                             <!-- Service Header with Icon and Title -->
                                             <div class="service-header">
-                                                <i class="fas fa-hospital service-icon"></i> <!-- Medical icon -->
-                                                <a href="#" class="service-title">{{ serviceWithUsage.service.nom }}</a> <!-- Clickable title -->
+                                                <i class="fas fa-hospital service-icon"></i> 
+                                                <!-- Medical icon -->
+<a href="/serviceet/{{ serviceWithUsage.service.id }}" class="service-title">
+    {{ serviceWithUsage.service.nom }}
+</a>                                                <!-- Clickable title -->
                                             </div>
 
                                             <!-- Service Description -->

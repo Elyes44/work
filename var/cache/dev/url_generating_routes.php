@@ -31,7 +31,7 @@ return [
     'update_services' => [['id'], ['_controller' => 'App\\Controller\\ServicesController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/update_services']], [], [], []],
     'delete_services' => [['id'], ['_controller' => 'App\\Controller\\ServicesController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/delete_services']], [], [], []],
     'all_services' => [[], ['_controller' => 'App\\Controller\\ServicesController::getAllServices'], [], [['text', '/allservices']], [], [], []],
-    'service_by_id' => [['id'], ['_controller' => 'App\\Controller\\ServicesController::getServiceById'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/service']], [], [], []],
+    'serviceet' => [['id'], ['_controller' => 'App\\Controller\\ServicesController::getServiceById'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/serviceet']], [], [], []],
     'pourcentageservices' => [[], ['_controller' => 'App\\Controller\\ServicesController::pourcentagSservices'], [], [['text', '/pourcentageservices']], [], [], []],
     'statistics' => [[], ['_controller' => 'App\\Controller\\StatisticsController::statistics'], [], [['text', '/statistics']], [], [], []],
     'App\Controller\RendezVousController::cal' => [[], ['_controller' => 'App\\Controller\\RendezVousController::cal'], [], [['text', '/cal']], [], [], []],
@@ -48,7 +48,7 @@ return [
     'App\Controller\ServicesController::update' => [['id'], ['_controller' => 'App\\Controller\\ServicesController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/update_services']], [], [], []],
     'App\Controller\ServicesController::delete' => [['id'], ['_controller' => 'App\\Controller\\ServicesController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/delete_services']], [], [], []],
     'App\Controller\ServicesController::getAllServices' => [[], ['_controller' => 'App\\Controller\\ServicesController::getAllServices'], [], [['text', '/allservices']], [], [], []],
-    'App\Controller\ServicesController::getServiceById' => [['id'], ['_controller' => 'App\\Controller\\ServicesController::getServiceById'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/service']], [], [], []],
+    'App\Controller\ServicesController::getServiceById' => [['id'], ['_controller' => 'App\\Controller\\ServicesController::getServiceById'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/serviceet']], [], [], []],
     'App\Controller\ServicesController::pourcentagSservices' => [[], ['_controller' => 'App\\Controller\\ServicesController::pourcentagSservices'], [], [['text', '/pourcentageservices']], [], [], []],
     'App\Controller\StatisticsController::statistics' => [[], ['_controller' => 'App\\Controller\\StatisticsController::statistics'], [], [['text', '/statistics']], [], [], []],
 ];

@@ -161,7 +161,7 @@ private function getUsagePercentageForService($service)
 
 //get service by id
 
-#[Route('/service/{id}', name: 'service_by_id')]
+#[Route('/serviceet/{id}', name: 'serviceet')]
 public function getServiceById(int $id, ServicesRepository $repository): Response
 {
     // Fetch the service by its id
