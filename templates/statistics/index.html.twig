@@ -1,0 +1,140 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <h1>Statistics</h1>
+
+    <!-- Card for Camembert and Line Charts -->
+    <div class="card">
+        <div class="card-body">
+            <!-- Row for Charts -->
+            <div class="row">
+                <!-- Camembert Chart Section -->
+                <div class="col-md-6">
+                    <h3>Consultation Types Distribution</h3>
+                    <canvas id="camembertChart" width="500" height="500"></canvas> <!-- Increased size -->
+                </div>
+
+                <!-- Line Chart Section -->
+                <div class="col-md-6">
+                    <h3>Appointment Count Variations</h3>
+                    <canvas id="appointmentsLineChart" width="500" height="500"></canvas> <!-- Increased size -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card for Histogram Chart -->
+    <div class="card mt-4">
+        <div class="card-body">
+            <h3>Appointments by Month</h3>
+            <canvas id="histogramChart" width="800" height="400"></canvas> <!-- Increased size -->
+        </div>
+    </div>
+
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Camembert Chart Script -->
+    <script>
+        var ctxCamembert = document.getElementById('camembertChart').getContext('2d');
+        
+        // Debug: Output the data passed to JavaScript
+        console.log("Services for Camembert:", {{ servicesForCamembert|raw }});
+        console.log("Percentages for Camembert:", {{ percentagesForCamembert|raw }});
+
+        var camembertChart = new Chart(ctxCamembert, {
+            type: 'pie',
+            data: {
+                labels: {{ servicesForCamembert|raw }}, // Service names
+                datasets: [{
+                    data: {{ percentagesForCamembert|raw }}, // Percentages
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
+                    hoverOffset: 4
+                }]
+            }
+        });
+    </script>
+
+    <!-- Line Chart Script -->
+    <script>
+        var ctxLine = document.getElementById('appointmentsLineChart').getContext('2d');
+        
+        // Debug: Output the data passed to JavaScript
+        console.log("Dates for Line Chart:", {{ datesForLineChart|raw }});
+        console.log("Counts for Line Chart:", {{ countsForLineChart|raw }});
+
+        var appointmentsLineChart = new Chart(ctxLine, {
+            type: 'line',
+            data: {
+                labels: {{ datesForLineChart|raw }},  // X-axis (Dates)
+                datasets: [{
+                    label: 'Number of Appointments',
+                    data: {{ countsForLineChart|raw }},  // Y-axis (Counts)
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Date'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Appointments Count'
+                        },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+    <!-- Histogram Chart Script -->
+    <script>
+        var ctxHistogram = document.getElementById('histogramChart').getContext('2d');
+        
+        // Debug: Output the data passed to JavaScript
+        console.log("Months for Histogram:", {{ monthsForHistogram|raw }});
+        console.log("Counts for Histogram:", {{ countsForHistogram|raw }});
+
+        var histogramChart = new Chart(ctxHistogram, {
+            type: 'bar',
+            data: {
+                labels: {{ monthsForHistogram|raw }},  // X-axis (Months)
+                datasets: [{
+                    label: 'Number of Appointments',
+                    data: {{ countsForHistogram|raw }},  // Y-axis (Counts)
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Month'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Appointments Count'
+                        },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</div>
+{% endblock %}

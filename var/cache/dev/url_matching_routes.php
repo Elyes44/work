@@ -25,6 +25,7 @@ return [
         '/add_services' => [[['_route' => 'add_services', '_controller' => 'App\\Controller\\ServicesController::add'], null, null, null, false, false, null]],
         '/allservices' => [[['_route' => 'all_services', '_controller' => 'App\\Controller\\ServicesController::getAllServices'], null, null, null, false, false, null]],
         '/pourcentageservices' => [[['_route' => 'pourcentageservices', '_controller' => 'App\\Controller\\ServicesController::pourcentagSservices'], null, null, null, false, false, null]],
+        '/statistics' => [[['_route' => 'statistics', '_controller' => 'App\\Controller\\StatisticsController::statistics'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

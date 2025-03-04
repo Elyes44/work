@@ -179,35 +179,17 @@ class __TwigTemplate_bdca80fd86c1f0cbf8adc0aba0c7388a extends Template
                 <div class=\"col-12\">
                     <div class=\"card\">
                         <div class=\"card-body\">
-                            <h5 class=\"card-title mb-4\">Gestion des services</h5>
-
-                            <!-- Search Form -->
-                            <form action=\"";
-        // line 89
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pourcentageservices");
-        yield "\" method=\"GET\" class=\"mb-4\">
-                                <div class=\"input-group\">
-                                    <input type=\"text\" class=\"form-control\" name=\"search\" placeholder=\"Rechercher une service par nom ou type...\" value=\"";
-        // line 91
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 91, $this->source); })()), "request", [], "any", false, false, false, 91), "query", [], "any", false, false, false, 91), "get", ["search"], "method", false, false, false, 91), "html", null, true);
-        yield "\">
-                                    <div class=\"input-group-append\">
-                                        <button type=\"submit\" class=\"btn btn-primary\">
-                                            <i class=\"fas fa-search\"></i> Rechercher
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
+                            <h3 class=\"card-title mb-4\">Gestion des services</h3>
 
                             <!-- Services List -->
                             <div class=\"row\">
                                 ";
-        // line 102
+        // line 90
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["servicesWithUsage"]) || array_key_exists("servicesWithUsage", $context) ? $context["servicesWithUsage"] : (function () { throw new RuntimeError('Variable "servicesWithUsage" does not exist.', 102, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["servicesWithUsage"]) || array_key_exists("servicesWithUsage", $context) ? $context["servicesWithUsage"] : (function () { throw new RuntimeError('Variable "servicesWithUsage" does not exist.', 90, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["serviceWithUsage"]) {
-            // line 103
+            // line 91
             yield "                                <div class=\"col-12 mb-4\">
                                     <div class=\"card card-service\">
                                         <div class=\"card-body\">
@@ -215,40 +197,40 @@ class __TwigTemplate_bdca80fd86c1f0cbf8adc0aba0c7388a extends Template
                                             <div class=\"service-header\">
                                                 <i class=\"fas fa-hospital service-icon\"></i> <!-- Medical icon -->
                                                 <a href=\"#\" class=\"service-title\">";
-            // line 109
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 109), "nom", [], "any", false, false, false, 109), "html", null, true);
+            // line 97
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 97), "nom", [], "any", false, false, false, 97), "html", null, true);
             yield "</a> <!-- Clickable title -->
                                             </div>
 
                                             <!-- Service Description -->
                                             <p class=\"service-description\">
                                                 <strong>Contenu :</strong> ";
-            // line 114
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 114), "content", [], "any", false, false, false, 114), "html", null, true);
+            // line 102
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 102), "content", [], "any", false, false, false, 102), "html", null, true);
             yield "<br>
                                                 <strong>Prix :</strong> ";
-            // line 115
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 115), "prix", [], "any", false, false, false, 115), "html", null, true);
+            // line 103
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 103), "prix", [], "any", false, false, false, 103), "html", null, true);
             yield " €<br>
                                                 <strong>Durée :</strong> ";
-            // line 116
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 116), "duree", [], "any", false, false, false, 116), "html", null, true);
+            // line 104
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 104), "duree", [], "any", false, false, false, 104), "html", null, true);
             yield " minutes<br>
                                                 <strong>Disponible à domicile :</strong> ";
-            // line 117
-            yield ((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 117), "dispoDomicile", [], "any", false, false, false, 117)) ? ("Oui") : ("Non"));
+            // line 105
+            yield ((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 105), "dispoDomicile", [], "any", false, false, false, 105)) ? ("Oui") : ("Non"));
             yield "<br>
                                                 <strong>Date de création :</strong> ";
-            // line 118
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 118), "created", [], "any", false, false, false, 118), "d/m/Y"), "html", null, true);
+            // line 106
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 106), "created", [], "any", false, false, false, 106), "d/m/Y"), "html", null, true);
             yield "<br>
                                                 <strong>Date de mise à jour :</strong> ";
-            // line 119
-            yield ((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 119), "updated", [], "any", false, false, false, 119)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 119), "updated", [], "any", false, false, false, 119), "d/m/Y"), "html", null, true)) : ("N/A"));
+            // line 107
+            yield ((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 107), "updated", [], "any", false, false, false, 107)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 107), "updated", [], "any", false, false, false, 107), "d/m/Y"), "html", null, true)) : ("N/A"));
             yield "<br>
                                                 <strong>Catégorie :</strong> ";
-            // line 120
-            yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, true, false, 120), "categorie", [], "any", true, true, false, 120) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 120), "categorie", [], "any", false, false, false, 120)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 120), "categorie", [], "any", false, false, false, 120), "html", null, true)) : ("N/A"));
+            // line 108
+            yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, true, false, 108), "categorie", [], "any", true, true, false, 108) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 108), "categorie", [], "any", false, false, false, 108)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "service", [], "any", false, false, false, 108), "categorie", [], "any", false, false, false, 108), "html", null, true)) : ("N/A"));
             yield "
                                             </p>
 
@@ -256,8 +238,8 @@ class __TwigTemplate_bdca80fd86c1f0cbf8adc0aba0c7388a extends Template
                                             <div class=\"service-actions\">
                                                 <div class=\"usage-percentage\">
                                                     <strong>Taux d'utilisation :</strong> ";
-            // line 126
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatNumber(CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "usagePercentage", [], "any", false, false, false, 126), 2), "html", null, true);
+            // line 114
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatNumber(CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "usagePercentage", [], "any", false, false, false, 114), 2), "html", null, true);
             yield "%
                                                 </div>
                                             </div>
@@ -267,9 +249,9 @@ class __TwigTemplate_bdca80fd86c1f0cbf8adc0aba0c7388a extends Template
                                 ";
             $context['_iterated'] = true;
         }
-        // line 138
+        // line 126
         if (!$context['_iterated']) {
-            // line 133
+            // line 121
             yield "                                <div class=\"col-12\">
                                     <div class=\"alert alert-info\" role=\"alert\">
                                         Aucune services trouvée.
@@ -280,73 +262,73 @@ class __TwigTemplate_bdca80fd86c1f0cbf8adc0aba0c7388a extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['serviceWithUsage'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 139
+        // line 127
         yield "                            </div>
 
                             <!-- Pagination -->
                             ";
-        // line 142
-        if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["services"]) || array_key_exists("services", $context) ? $context["services"] : (function () { throw new RuntimeError('Variable "services" does not exist.', 142, $this->source); })())) > 0)) {
-            // line 143
+        // line 130
+        if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["services"]) || array_key_exists("services", $context) ? $context["services"] : (function () { throw new RuntimeError('Variable "services" does not exist.', 130, $this->source); })())) > 0)) {
+            // line 131
             yield "                            <div class=\"pagination justify-content-center mt-4\">
                                 <ul class=\"pagination\">
                                     <!-- Previous Link -->
                                     ";
-            // line 146
-            if ((array_key_exists("previous", $context) && (isset($context["previous"]) || array_key_exists("previous", $context) ? $context["previous"] : (function () { throw new RuntimeError('Variable "previous" does not exist.', 146, $this->source); })()))) {
-                // line 147
+            // line 134
+            if ((array_key_exists("previous", $context) && (isset($context["previous"]) || array_key_exists("previous", $context) ? $context["previous"] : (function () { throw new RuntimeError('Variable "previous" does not exist.', 134, $this->source); })()))) {
+                // line 135
                 yield "                                        <li class=\"page-item\">
                                             <a class=\"page-link\" href=\"";
-                // line 148
+                // line 136
                 yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pourcentageservices");
                 yield "?page=";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["previous"]) || array_key_exists("previous", $context) ? $context["previous"] : (function () { throw new RuntimeError('Variable "previous" does not exist.', 148, $this->source); })()), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["previous"]) || array_key_exists("previous", $context) ? $context["previous"] : (function () { throw new RuntimeError('Variable "previous" does not exist.', 136, $this->source); })()), "html", null, true);
                 yield "&search=";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 148, $this->source); })()), "request", [], "any", false, false, false, 148), "query", [], "any", false, false, false, 148), "get", ["search"], "method", false, false, false, 148), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 136, $this->source); })()), "request", [], "any", false, false, false, 136), "query", [], "any", false, false, false, 136), "get", ["search"], "method", false, false, false, 136), "html", null, true);
                 yield "\">Précédent</a>
                                         </li>
                                     ";
             }
-            // line 151
+            // line 139
             yield "                                    <!-- Current Page -->
                                     <li class=\"page-item active\">
                                         <span class=\"page-link\">";
-            // line 153
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 153, $this->source); })()), "html", null, true);
+            // line 141
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 141, $this->source); })()), "html", null, true);
             yield "</span>
                                     </li>
                                     <!-- Next Link -->
                                     ";
-            // line 156
-            if ((array_key_exists("next", $context) && (isset($context["next"]) || array_key_exists("next", $context) ? $context["next"] : (function () { throw new RuntimeError('Variable "next" does not exist.', 156, $this->source); })()))) {
-                // line 157
+            // line 144
+            if ((array_key_exists("next", $context) && (isset($context["next"]) || array_key_exists("next", $context) ? $context["next"] : (function () { throw new RuntimeError('Variable "next" does not exist.', 144, $this->source); })()))) {
+                // line 145
                 yield "                                        <li class=\"page-item\">
                                             <a class=\"page-link\" href=\"";
-                // line 158
+                // line 146
                 yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pourcentageservices");
                 yield "?page=";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["next"]) || array_key_exists("next", $context) ? $context["next"] : (function () { throw new RuntimeError('Variable "next" does not exist.', 158, $this->source); })()), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["next"]) || array_key_exists("next", $context) ? $context["next"] : (function () { throw new RuntimeError('Variable "next" does not exist.', 146, $this->source); })()), "html", null, true);
                 yield "&search=";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 158, $this->source); })()), "request", [], "any", false, false, false, 158), "query", [], "any", false, false, false, 158), "get", ["search"], "method", false, false, false, 158), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 146, $this->source); })()), "request", [], "any", false, false, false, 146), "query", [], "any", false, false, false, 146), "get", ["search"], "method", false, false, false, 146), "html", null, true);
                 yield "\">Suivant</a>
                                         </li>
                                     ";
             }
-            // line 161
+            // line 149
             yield "                                </ul>
                             </div>
                             <!-- Page Indicator -->
                             <div class=\"text-center mt-2\">
                                 Page ";
-            // line 165
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 165, $this->source); })()), "html", null, true);
+            // line 153
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 153, $this->source); })()), "html", null, true);
             yield " sur ";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["services"]) || array_key_exists("services", $context) ? $context["services"] : (function () { throw new RuntimeError('Variable "services" does not exist.', 165, $this->source); })()), "getPageCount", [], "method", false, false, false, 165), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["services"]) || array_key_exists("services", $context) ? $context["services"] : (function () { throw new RuntimeError('Variable "services" does not exist.', 153, $this->source); })()), "getPageCount", [], "method", false, false, false, 153), "html", null, true);
             yield "
                             </div>
                             ";
         }
-        // line 168
+        // line 156
         yield "                        </div>
                     </div>
                 </div>
@@ -385,7 +367,7 @@ class __TwigTemplate_bdca80fd86c1f0cbf8adc0aba0c7388a extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  350 => 168,  342 => 165,  336 => 161,  326 => 158,  323 => 157,  321 => 156,  315 => 153,  311 => 151,  301 => 148,  298 => 147,  296 => 146,  291 => 143,  289 => 142,  284 => 139,  273 => 133,  271 => 138,  260 => 126,  251 => 120,  247 => 119,  243 => 118,  239 => 117,  235 => 116,  231 => 115,  227 => 114,  219 => 109,  211 => 103,  206 => 102,  192 => 91,  187 => 89,  175 => 79,  162 => 78,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  332 => 156,  324 => 153,  318 => 149,  308 => 146,  305 => 145,  303 => 144,  297 => 141,  293 => 139,  283 => 136,  280 => 135,  278 => 134,  273 => 131,  271 => 130,  266 => 127,  255 => 121,  253 => 126,  242 => 114,  233 => 108,  229 => 107,  225 => 106,  221 => 105,  217 => 104,  213 => 103,  209 => 102,  201 => 97,  193 => 91,  188 => 90,  175 => 79,  162 => 78,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -475,19 +457,7 @@ class __TwigTemplate_bdca80fd86c1f0cbf8adc0aba0c7388a extends Template
                 <div class=\"col-12\">
                     <div class=\"card\">
                         <div class=\"card-body\">
-                            <h5 class=\"card-title mb-4\">Gestion des services</h5>
-
-                            <!-- Search Form -->
-                            <form action=\"{{ path('pourcentageservices') }}\" method=\"GET\" class=\"mb-4\">
-                                <div class=\"input-group\">
-                                    <input type=\"text\" class=\"form-control\" name=\"search\" placeholder=\"Rechercher une service par nom ou type...\" value=\"{{ app.request.query.get('search') }}\">
-                                    <div class=\"input-group-append\">
-                                        <button type=\"submit\" class=\"btn btn-primary\">
-                                            <i class=\"fas fa-search\"></i> Rechercher
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
+                            <h3 class=\"card-title mb-4\">Gestion des services</h3>
 
                             <!-- Services List -->
                             <div class=\"row\">

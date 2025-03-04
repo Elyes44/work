@@ -9,7 +9,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.3);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,12 +18,82 @@
 
         .form-container {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 500px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 40px 40px 30px;
+            border-radius: 16px;
+            width: 600px;
+            max-width: 100%;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
         }
 
+        .card-header {
+            padding: 10px 15px;
+            background-color: #f7f7f7;
+            border: none;
+            text-align: center;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-control, .form-check-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .form-control:focus {
+            border-color: #4285f4;
+            outline: none;
+        }
+
+        .form-check-input {
+            margin-top: 3px;
+        }
+
+        .form-label {
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .invalid-feedback {
+            font-size: 12px;
+            color: #dc3545;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-close {
+            font-size: 24px;
+            border: none;
+            background: transparent;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .btn-close:hover {
+            color: #333;
+        }
+
+        /* Avatar styling */
         .avatar-container {
             display: flex;
             align-items: center;
@@ -32,7 +102,33 @@
 
         .avatar-container img {
             margin-right: 10px;
+            width: 50px;
+            height: 50px;
         }
+
+        .card-footer {
+            text-align: center;
+        }
+
+        .card-footer button {
+            background-color: #4285f4;
+            color: white;
+            border-radius: 8px;
+            padding: 12px 25px;
+            font-weight: bold;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .form-container {
+                width: 90%;
+            }
+
+            .form-group {
+                gap: 8px;
+            }
+        }
+
     </style>
 {% endblock %}
 
@@ -55,13 +151,9 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="mb-0">Créer une publication</h5>
-                    <button class="btn btn-close" onclick="closeForm()"></button>
+                    <button class="btn btn-close" onclick="closeForm()">×</button>
                 </div>
                 <div class="card-body">
-                    <div class="avatar-container">
-                        <img src="/images/user_avatar.png" alt="Avatar" class="rounded-circle" width="50" height="50">
-                        <span>Votre nom d'utilisateur</span>
-                    </div>
 
                     {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
@@ -154,7 +246,9 @@
                     </div>
 
                     {# Submit Button #}
-                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                    <div class="card-footer">
+                        <button type="submit" class="btn">Ajouter</button>
+                    </div>
 
                     {{ form_end(form) }}
                 </div>
@@ -167,7 +261,6 @@
     {{ parent() }}
     <script>
         function closeForm() {
-            console.log("Close form called"); // Debug
             document.getElementById('form-overlay').style.display = 'none';
         }
     </script>

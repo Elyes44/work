@@ -33,6 +33,7 @@ return [
     'all_services' => [[], ['_controller' => 'App\\Controller\\ServicesController::getAllServices'], [], [['text', '/allservices']], [], [], []],
     'service_by_id' => [['id'], ['_controller' => 'App\\Controller\\ServicesController::getServiceById'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/service']], [], [], []],
     'pourcentageservices' => [[], ['_controller' => 'App\\Controller\\ServicesController::pourcentagSservices'], [], [['text', '/pourcentageservices']], [], [], []],
+    'statistics' => [[], ['_controller' => 'App\\Controller\\StatisticsController::statistics'], [], [['text', '/statistics']], [], [], []],
     'App\Controller\RendezVousController::cal' => [[], ['_controller' => 'App\\Controller\\RendezVousController::cal'], [], [['text', '/cal']], [], [], []],
     'App\Controller\RendezVousController::indeex' => [[], ['_controller' => 'App\\Controller\\RendezVousController::indeex'], [], [['text', '/']], [], [], []],
     'App\Controller\RendezVousController::add' => [[], ['_controller' => 'App\\Controller\\RendezVousController::add'], [], [['text', '/addrdv']], [], [], []],
@@ -49,4 +50,5 @@ return [
     'App\Controller\ServicesController::getAllServices' => [[], ['_controller' => 'App\\Controller\\ServicesController::getAllServices'], [], [['text', '/allservices']], [], [], []],
     'App\Controller\ServicesController::getServiceById' => [['id'], ['_controller' => 'App\\Controller\\ServicesController::getServiceById'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/service']], [], [], []],
     'App\Controller\ServicesController::pourcentagSservices' => [[], ['_controller' => 'App\\Controller\\ServicesController::pourcentagSservices'], [], [['text', '/pourcentageservices']], [], [], []],
+    'App\Controller\StatisticsController::statistics' => [[], ['_controller' => 'App\\Controller\\StatisticsController::statistics'], [], [['text', '/statistics']], [], [], []],
 ];

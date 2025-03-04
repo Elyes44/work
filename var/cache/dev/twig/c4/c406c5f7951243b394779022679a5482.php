@@ -158,7 +158,9 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
                                     <li>
                                         <a href=\"afficher_rendezVous\">Liste des Rendez-vous</a>
                                     </li>
-                                    
+                                    <li>
+                                        <a href=\"statistics\">Dashboard des statistiques</a>
+                                    </li>                                    
                                 </div>
                             </ul>
                         </li>
@@ -219,9 +221,9 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
                         <div class=\"col-lg-8 mx-auto\">
                             <div class=\"card card-default\">
                               ";
-        // line 171
+        // line 173
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 172
+        // line 174
         yield "                            </div>
                         </div>
                     </div>
@@ -311,7 +313,7 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
         yield from [];
     }
 
-    // line 171
+    // line 173
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -346,7 +348,7 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  315 => 171,  303 => 48,  290 => 47,  225 => 172,  223 => 171,  100 => 50,  98 => 47,  50 => 1,);
+        return array (  317 => 173,  305 => 48,  292 => 47,  227 => 174,  225 => 173,  100 => 50,  98 => 47,  50 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -461,7 +463,9 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
                                     <li>
                                         <a href=\"afficher_rendezVous\">Liste des Rendez-vous</a>
                                     </li>
-                                    
+                                    <li>
+                                        <a href=\"statistics\">Dashboard des statistiques</a>
+                                    </li>                                    
                                 </div>
                             </ul>
                         </li>

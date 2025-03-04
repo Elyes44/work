@@ -83,19 +83,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title mb-4">Gestion des services</h5>
-
-                            <!-- Search Form -->
-                            <form action="{{ path('pourcentageservices') }}" method="GET" class="mb-4">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" name="search" placeholder="Rechercher une service par nom ou type..." value="{{ app.request.query.get('search') }}">
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-primary">
-                                            <i class="fas fa-search"></i> Rechercher
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
+                            <h3 class="card-title mb-4">Gestion des services</h3>
 
                             <!-- Services List -->
                             <div class="row">
