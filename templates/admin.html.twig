@@ -44,6 +44,9 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="/assets/plugins/nprogress/nprogress.js"></script>
+        {% block stylesheets %}
+        <!-- Additional stylesheets or custom CSS can be added here by child templates -->
+    {% endblock %}
 </head>
 
 <body class="header-fixed sidebar-fixed sidebar-dark header-light" id="body">
@@ -91,13 +94,19 @@
                         <li class="has-sub">
                             <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#formations" aria-expanded="false" aria-controls="formations">
                                 <i class="mdi mdi-email-mark-as-unread"></i>
-                                <span class="nav-text">Gestion Rendez vous</span> <b class="caret"></b>
+                                <span class="nav-text">Gestion Rendez-vous</span> <b class="caret"></b>
                             </a>
                             <ul class="collapse" id="formations" data-parent="#sidebar-menu">
                                 <div class="sub-menu">
                                     
                                     <li>
-                                        <a href="add_services">Add Services</a>
+                                        <a href="add_services">Ajouter Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="allservices">Liste des Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="afficher_rendezVous">Liste des Rendez-vous</a>
                                     </li>
                                     
                                 </div>

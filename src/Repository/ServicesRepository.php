@@ -25,4 +25,24 @@ class ServicesRepository extends ServiceEntityRepository
         }
         return $qb->getQuery()->getResult();
     }
+
+
+
+
+    public function getUsagePercentage(Services $service): float
+    {
+        // Get the total number of appointments for this service
+        $totalAppointments = $service->getRendezVouss()->count();
+
+        // Get the total number of services
+        $totalServices = $this->count([]);
+
+        if ($totalServices === 0) {
+            return 0; // Avoid division by zero
+        }
+
+        // Calculate the percentage
+        return ($totalAppointments / $totalServices) * 100;
+    }
 }
+

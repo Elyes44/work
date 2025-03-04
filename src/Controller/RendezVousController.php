@@ -65,31 +65,31 @@ public function add(Request $request, ManagerRegistry $doctrine): Response
         error_log('Appointment saved successfully. Attempting to send SMS...');
 
         // Step 6: Send SMS using Twilio API
-        $sid = "here!.................................................."; 
-        $token = "here!.................................................."; 
-        $fromNumber = "here!.................................................."; 
+        // $sid = "here!.................................................."; 
+        // $token = "here!.................................................."; 
+        // $fromNumber = "here!.................................................."; 
 
-        $twilio = new Client($sid, $token);
+        // $twilio = new Client($sid, $token);
 
-        try {
-            $message = $twilio->messages->create(
-                "$RendezVous->getTelephone()", // $RendezVous->getTelephone(), // Recipient's phone number
-                [
-                    'from' => $fromNumber, // Twilio From number
-                    'body' => 'Bonjour, votre rendez-vous a été enregistré avec succès. Merci!' // Static SMS message
-                ]
-            );
+        // try {
+        //     $message = $twilio->messages->create(
+        //         "$RendezVous->getTelephone()", // $RendezVous->getTelephone(), // Recipient's phone number
+        //         [
+        //             'from' => $fromNumber, // Twilio From number
+        //             'body' => 'Bonjour, votre rendez-vous a été enregistré avec succès. Merci!' // Static SMS message
+        //         ]
+        //     );
 
-            // Debug: Log the message SID for debugging
-            error_log('SMS sent successfully. SID: ' . $message->sid);
+        //     // Debug: Log the message SID for debugging
+        //     error_log('SMS sent successfully. SID: ' . $message->sid);
 
-            $this->addFlash('success', 'Rendez-vous ajouté et SMS envoyé avec succès! SID: ' . $message->sid);
-        } catch (\Exception $e) {
-            // Debug: Log the error
-            error_log('Failed to send SMS: ' . $e->getMessage());
+        //     $this->addFlash('success', 'Rendez-vous ajouté et SMS envoyé avec succès! SID: ' . $message->sid);
+        // } catch (\Exception $e) {
+        //     // Debug: Log the error
+        //     error_log('Failed to send SMS: ' . $e->getMessage());
 
-            $this->addFlash('error', 'Erreur lors de l\'envoi du SMS: ' . $e->getMessage());
-        }
+        //     $this->addFlash('error', 'Erreur lors de l\'envoi du SMS: ' . $e->getMessage());
+        // }
 
         // Step 7: Redirect to the same route (or another route if needed)
         return $this->redirectToRoute('afficher_rendezVous');

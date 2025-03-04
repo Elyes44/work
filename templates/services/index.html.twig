@@ -2,37 +2,45 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/kk.css') }}">
-    <!-- Ajoute FontAwesome pour les icônes -->
+    <!-- Add FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Styles pour les boutons */
-        .btn-like, .btn-comment, .btn-share {
-            border: none;
-            background: none;
+        /* Custom card styling */
+        .static-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .static-card .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .static-card .card-icon {
+            font-size: 24px;
+            color: #4169E1; /* Blue color for the medical icon */
+            margin-right: 10px;
+        }
+
+        .static-card .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none; /* Remove underline from link */
+        }
+
+        .static-card .card-title:hover {
+            color: #4169E1; /* Blue color on hover */
+        }
+
+        .static-card .card-description {
+            font-size: 16px;
             color: #666;
-            font-size: 14px;
-            cursor: pointer;
-            display: flex;
-            align-items: center; /* Centrer le texte et l'icône verticalement */
-        }
-    
-        .btn-like:hover, .btn-comment:hover, .btn-share:hover {
-            color: #1877f2; /* Couleur bleue Facebook */
-        }
-    
-        .btn-like i, .btn-comment i, .btn-share i {
-            margin-right: 5px;
-        }
-    
-        /* Style pour la section des actions */
-        .services-actions {
-            border-top: 1px solid #ddd;
-            padding-top: 10px;
-            margin-top: 10px;
-            display: flex;
-            justify-content: center; /* Centrer les boutons horizontalement */
-            gap: 20px; /* Espacement entre les boutons */
         }
     </style>
 {% endblock %}
@@ -47,83 +55,32 @@
                         <div class="card-body">
                             <h5 class="card-title mb-4">Gestion des services</h5>
 
-                            <!-- Formulaire de recherche -->
-                            <form action="{{ path('app_services') }}" method="GET" class="mb-4">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" name="search" placeholder="Rechercher une services par nom ou type..." value="{{ app.request.query.get('search') }}">
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-primary">
-                                            <i class="fas fa-search"></i> Rechercher
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- Fin du formulaire de recherche -->
-
-                            <!-- Liste verticale des services -->
+                            <!-- Static Cards -->
                             <div class="row">
-                                {% for services in services %}
-                                <div class="col-12 mb-4"> <!-- Chaque service prend toute la largeur -->
-                                    <div class="card card-services">
-                                        <div class="card-body">
-                                            <!-- Image de la services -->
-                                            <div class="services-image" style="background-image: url('https://via.placeholder.com/300');"></div>
-                                            <!-- Nom de la services -->
-                                            <h5 class="services-nom">{{ services.nom }}</h5>
-                                            <!-- Information sur la services -->
-                                            <p class="services-type"><strong>Type :</strong> {{ services.content }}</p>
-                                            <p class="services-date"><strong>Date de plantation :</strong> {{ services.created|date('d-m-Y') }}</p>
-                                            <!-- Groupe sanguin du rendez vous  -->
-                                            
-                                            <!-- Boutons d'actions -->
-                                            <div class="services-actions">
-                                                <!-- Boutons personnalisés -->
-                                                <button class="btn btn-like">
-                                                    <i class="fas fa-thumbs-up"></i> J'aime
-                                                </button>
-                                                
-                                            </div>
+                                <div class="col-12 mb-4">
+                                    <div class="static-card">
+                                        <div class="card-header">
+                                            <i class="fas fa-hospital card-icon"></i> <!-- Medical icon -->
+                                            <a href="#" class="card-title">Nom du Service 1</a> <!-- Clickable title -->
                                         </div>
+                                        <p class="card-description">
+                                            Ce service coûte <strong>50 €</strong> et est disponible du <strong>01/01/2023</strong> au <strong>31/12/2023</strong>.
+                                        </p>
                                     </div>
                                 </div>
-                                {% else %}
-                                <div class="col-12">
-                                    <div class="alert alert-info" role="alert">
-                                        Aucune services trouvée.
-                                    </div>
-                                </div>
-                                {% endfor %}
-                            </div>
-                            <!-- Fin de la liste verticale -->
 
-                            <!-- Pagination -->
-                            {% if services|length > 0 %}
-                            <div class="pagination justify-content-center mt-4">
-                                <ul class="pagination">
-                                    <!-- Lien "Précédent" -->
-                                    {% if previous is defined and previous %}
-                                        <li class="page-item">
-                                            <a class="page-link" href="{{ path('app_services') }}?page={{ previous }}&search={{ app.request.query.get('search') }}">Précédent</a>
-                                        </li>
-                                    {% endif %}
-                                    <!-- Page actuelle -->
-                                    <li class="page-item active">
-                                        <span class="page-link">{{ currentPage }}</span>
-                                    </li>
-                                    <!-- Lien "Suivant" -->
-                                    {% if next is defined and next %}
-                                        <li class="page-item">
-                                            <a class="page-link" href="{{ path('app_services') }}?page={{ next }}&search={{ app.request.query.get('search') }}">Suivant</a>
-                                        </li>
-                                    {% endif %}
-                                </ul>
+                                <div class="col-12 mb-4">
+                                    <div class="static-card">
+                                        <div class="card-header">
+                                            <i class="fas fa-hospital card-icon"></i> <!-- Medical icon -->
+                                            <a href="#" class="card-title">Nom du Service 2</a> <!-- Clickable title -->
+                                        </div>
+                                        <p class="card-description">
+                                            Ce service coûte <strong>75 €</strong> et est disponible du <strong>15/03/2023</strong> au <strong>15/06/2023</strong>.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- Indicateur de page -->
-                            <div class="text-center mt-2">
-                                Page {{ currentPage }} sur {{ services.getPageCount() }}
-                            </div>
-                            {% endif %}
-                            <!-- Fin de la pagination -->
                         </div>
                     </div>
                 </div>

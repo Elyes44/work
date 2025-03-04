@@ -30,14 +30,14 @@ class __TwigTemplate_e60c9d2f2ea712569026763abf1223b1 extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'section' => [$this, 'block_section'],
+            'body' => [$this, 'block_body'],
         ];
     }
 
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
         // line 1
-        return "home.html.twig";
+        return "admin.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = []): iterable
@@ -49,7 +49,7 @@ class __TwigTemplate_e60c9d2f2ea712569026763abf1223b1 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "rendezVous/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("home.html.twig", "rendezVous/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin.html.twig", "rendezVous/index.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -63,14 +63,14 @@ class __TwigTemplate_e60c9d2f2ea712569026763abf1223b1 extends Template
     /**
      * @return iterable<null|scalar|\Stringable>
      */
-    public function block_section(array $context, array $blocks = []): iterable
+    public function block_body(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "section"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "section"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         yield "    <div class=\"container mt-4\">
@@ -120,56 +120,61 @@ class __TwigTemplate_e60c9d2f2ea712569026763abf1223b1 extends Template
                     <th>Date et Heure de Fin</th>
                     <th>Service</th>
                     <th>Lieu</th>
-                    <th>Antécédents médicaux</th>
+                    <th>Adresse</th>
+                    <th>Telephone</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 ";
-        // line 44
+        // line 45
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["RendezVous"]) || array_key_exists("RendezVous", $context) ? $context["RendezVous"] : (function () { throw new RuntimeError('Variable "RendezVous" does not exist.', 44, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["RendezVous"]) || array_key_exists("RendezVous", $context) ? $context["RendezVous"] : (function () { throw new RuntimeError('Variable "RendezVous" does not exist.', 45, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["rendezVous"]) {
-            // line 45
+            // line 46
             yield "                    <tr>
                         <td>";
-            // line 46
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "NomClient", [], "any", false, false, false, 46), "html", null, true);
-            yield "</td>
-                        <td>";
             // line 47
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "start", [], "any", false, false, false, 47), "d/m/Y H:i"), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "NomClient", [], "any", false, false, false, 47), "html", null, true);
             yield "</td>
                         <td>";
             // line 48
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "end", [], "any", false, false, false, 48), "d/m/Y H:i"), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "start", [], "any", false, false, false, 48), "d/m/Y H:i"), "html", null, true);
             yield "</td>
                         <td>";
             // line 49
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "services", [], "any", false, false, false, 49), "nom", [], "any", false, false, false, 49), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "end", [], "any", false, false, false, 49), "d/m/Y H:i"), "html", null, true);
             yield "</td>
                         <td>";
             // line 50
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "lieu", [], "any", false, false, false, 50), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "services", [], "any", false, false, false, 50), "nom", [], "any", false, false, false, 50), "html", null, true);
             yield "</td>
                         <td>";
             // line 51
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "adresse", [], "any", false, false, false, 51), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "lieu", [], "any", false, false, false, 51), "html", null, true);
+            yield "</td>
+                        <td>";
+            // line 52
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "adresse", [], "any", false, false, false, 52), "html", null, true);
+            yield "</td>
+                        <td>";
+            // line 53
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "Telephone", [], "any", false, false, false, 53), "html", null, true);
             yield "</td>
                         <td>
                             ";
-            // line 54
+            // line 56
             yield "                            <a href=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("updaterendez", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "id", [], "any", false, false, false, 54)]), "html", null, true);
-            yield "\" class=\"btn btn-warning btn-sm\" style=\"padding: 0.25rem 0.5rem; font-size: 0.875rem;\">
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("updaterendez", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "id", [], "any", false, false, false, 56)]), "html", null, true);
+            yield "\" class=\"btn btn-sm\" style=\"padding: 0.25rem 0.5rem; font-size: 0.875rem; background-color: #4169E1; color: white;\">
                                 <i class=\"fas fa-edit\"></i> Modifier
                             </a>
 
                             ";
-            // line 59
+            // line 61
             yield "                            <a href=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deleterendez", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "id", [], "any", false, false, false, 59)]), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("deleterendez", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["rendezVous"], "id", [], "any", false, false, false, 61)]), "html", null, true);
             yield "\" class=\"btn btn-danger btn-sm\" style=\"padding: 0.25rem 0.5rem; font-size: 0.875rem;\" onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer ce rendez-vous ?');\">
                                 <i class=\"fas fa-trash\"></i> Supprimer
                             </a>
@@ -178,9 +183,9 @@ class __TwigTemplate_e60c9d2f2ea712569026763abf1223b1 extends Template
                 ";
             $context['_iterated'] = true;
         }
-        // line 68
+        // line 70
         if (!$context['_iterated']) {
-            // line 65
+            // line 67
             yield "                    <tr>
                         <td colspan=\"7\" class=\"text-center\">Aucun rendez-vous trouvé.</td>
                     </tr>
@@ -189,16 +194,16 @@ class __TwigTemplate_e60c9d2f2ea712569026763abf1223b1 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['rendezVous'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 69
+        // line 71
         yield "            </tbody>
         </table>
 
         ";
-        // line 73
+        // line 75
         yield "        <div class=\"d-flex justify-content-center\">
             ";
-        // line 74
-        yield $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->render($this->env, (isset($context["RendezVous"]) || array_key_exists("RendezVous", $context) ? $context["RendezVous"] : (function () { throw new RuntimeError('Variable "RendezVous" does not exist.', 74, $this->source); })()));
+        // line 76
+        yield $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->render($this->env, (isset($context["RendezVous"]) || array_key_exists("RendezVous", $context) ? $context["RendezVous"] : (function () { throw new RuntimeError('Variable "RendezVous" does not exist.', 76, $this->source); })()));
         yield "
         </div>
     </div>
@@ -233,14 +238,14 @@ class __TwigTemplate_e60c9d2f2ea712569026763abf1223b1 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  201 => 74,  198 => 73,  193 => 69,  184 => 65,  182 => 68,  171 => 59,  163 => 54,  158 => 51,  154 => 50,  150 => 49,  146 => 48,  142 => 47,  138 => 46,  135 => 45,  130 => 44,  115 => 31,  107 => 25,  104 => 24,  90 => 12,  85 => 10,  81 => 8,  76 => 4,  63 => 3,  40 => 1,);
+        return array (  206 => 76,  203 => 75,  198 => 71,  189 => 67,  187 => 70,  176 => 61,  168 => 56,  163 => 53,  159 => 52,  155 => 51,  151 => 50,  147 => 49,  143 => 48,  139 => 47,  136 => 46,  131 => 45,  115 => 31,  107 => 25,  104 => 24,  90 => 12,  85 => 10,  81 => 8,  76 => 4,  63 => 3,  40 => 1,);
     }
 
     public function getSourceContext(): Source
     {
-        return new Source("{% extends 'home.html.twig' %}
+        return new Source("{% extends 'admin.html.twig' %}
 
-{% block section %}
+{% block body %}
     <div class=\"container mt-4\">
         <h1 class=\"text-center\">Liste des Rendez-vous</h1>
 
@@ -276,7 +281,8 @@ class __TwigTemplate_e60c9d2f2ea712569026763abf1223b1 extends Template
                     <th>Date et Heure de Fin</th>
                     <th>Service</th>
                     <th>Lieu</th>
-                    <th>Antécédents médicaux</th>
+                    <th>Adresse</th>
+                    <th>Telephone</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -289,9 +295,10 @@ class __TwigTemplate_e60c9d2f2ea712569026763abf1223b1 extends Template
                         <td>{{ rendezVous.services.nom }}</td>
                         <td>{{ rendezVous.lieu }}</td>
                         <td>{{ rendezVous.adresse }}</td>
+                        <td>{{ rendezVous.Telephone }}</td>
                         <td>
                             {# Edit Button #}
-                            <a href=\"{{ path('updaterendez', {'id': rendezVous.id}) }}\" class=\"btn btn-warning btn-sm\" style=\"padding: 0.25rem 0.5rem; font-size: 0.875rem;\">
+                            <a href=\"{{ path('updaterendez', {'id': rendezVous.id}) }}\" class=\"btn btn-sm\" style=\"padding: 0.25rem 0.5rem; font-size: 0.875rem; background-color: #4169E1; color: white;\">
                                 <i class=\"fas fa-edit\"></i> Modifier
                             </a>
 

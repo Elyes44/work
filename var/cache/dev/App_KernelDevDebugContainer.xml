@@ -429,7 +429,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.WLNQJ6V"/>
+      <argument type="service" id=".service_locator..nxtoTz"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3457,7 +3457,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.WLNQJ6V"/>
+      <argument type="service" id=".service_locator..nxtoTz"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -8001,7 +8001,13 @@
         <argument key="repository" type="service_closure" id="App\Repository\ServicesRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.WLNQJ6V" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.LroVcfL" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="servicesRepository" type="service_closure" id="App\Repository\ServicesRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator..nxtoTz" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\RendezVousController::AfficheRendezVous" type="service_closure" id=".service_locator.kMnENF0"/>
@@ -8016,6 +8022,7 @@
         <argument key="App\Controller\ServicesController::getAllServices" type="service_closure" id=".service_locator._AgMh5."/>
         <argument key="App\Controller\ServicesController::getServiceById" type="service_closure" id=".service_locator.7d4S73s"/>
         <argument key="App\Controller\ServicesController::index" type="service_closure" id=".service_locator._AgMh5."/>
+        <argument key="App\Controller\ServicesController::pourcentagSservices" type="service_closure" id=".service_locator.LroVcfL"/>
         <argument key="App\Controller\ServicesController::update" type="service_closure" id=".service_locator.MxwGiXI"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
@@ -8033,6 +8040,7 @@
         <argument key="App\Controller\ServicesController:getAllServices" type="service_closure" id=".service_locator._AgMh5."/>
         <argument key="App\Controller\ServicesController:getServiceById" type="service_closure" id=".service_locator.7d4S73s"/>
         <argument key="App\Controller\ServicesController:index" type="service_closure" id=".service_locator._AgMh5."/>
+        <argument key="App\Controller\ServicesController:pourcentagSservices" type="service_closure" id=".service_locator.LroVcfL"/>
         <argument key="App\Controller\ServicesController:update" type="service_closure" id=".service_locator.MxwGiXI"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
@@ -10250,7 +10258,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.WLNQJ6V"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator..nxtoTz"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10281,7 +10289,7 @@
     <service id=".service_locator.VIsxxXs" alias=".service_locator.lmGj34a"/>
     <service id=".service_locator.E2BeN0O" alias=".service_locator._AgMh5."/>
     <service id=".service_locator.3fwa_69" alias=".service_locator.MxwGiXI"/>
-    <service id=".service_locator.8C.VvSy" alias=".service_locator.WLNQJ6V"/>
+    <service id=".service_locator.t1wfBLH" alias=".service_locator..nxtoTz"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.F5TASzU" alias=".service_locator.RlxPagj"/>
     <service id=".service_locator.XtmiKbi" alias=".service_locator.MfxSDRP"/>
@@ -10316,6 +10324,7 @@
     <service id=".service_locator.7.6kQmp" alias=".service_locator._AgMh5."/>
     <service id=".service_locator.t5en3XN" alias=".service_locator.MxwGiXI"/>
     <service id=".service_locator.Eup7m_Z" alias=".service_locator.7d4S73s"/>
+    <service id=".service_locator.wcxlVxE" alias=".service_locator.LroVcfL"/>
     <service id=".service_locator.Q1z.f9O" alias=".service_locator.O2p6Lk7"/>
     <service id=".service_locator.dGUCsbe" alias=".service_locator.oR77BOj"/>
     <service id=".service_locator._kIAbz1" alias=".service_locator.TpoC7U9"/>

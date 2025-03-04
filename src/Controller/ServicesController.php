@@ -119,10 +119,21 @@ public function getAllServices(ServicesRepository $repository, Request $request,
 
     // Paginate results
     $services = $paginator->paginate(
-        $query, // Query to paginate
-        $request->query->getInt('page', 1), // Default page number
-        6 // Number of items per page
+        $query,
+        $request->query->getInt('page', 1),
+        6
     );
+
+    // Calculate usage for each service
+    $servicesWithUsage = [];
+    foreach ($services as $service) {
+        // Example: Assuming you want to calculate the usage percentage for the service
+        $usagePercentage = $this->getUsagePercentageForService($service); // Replace with actual logic
+        $servicesWithUsage[] = [
+            'service' => $service,
+            'usagePercentage' => $usagePercentage
+        ];
+    }
 
     // Calculate pagination variables
     $currentPage = $services->getCurrentPageNumber();
@@ -130,12 +141,21 @@ public function getAllServices(ServicesRepository $repository, Request $request,
     $next = $currentPage < $services->getPageCount() ? $currentPage + 1 : null;
 
     return $this->render('services/allserives.html.twig', [
-        'services' => $services,
+        'services' => $services,  // Pass paginated object
+        'servicesWithUsage' => $servicesWithUsage,
         'currentPage' => $currentPage,
         'previous' => $previous,
         'next' => $next,
     ]);
 }
+
+// Example function to calculate usage percentage for a service
+private function getUsagePercentageForService($service)
+{
+    // Example logic: You would replace this with actual data fetching and calculations
+    return rand(1, 100); // Random percentage for demonstration
+}
+
 
 
 
@@ -158,6 +178,37 @@ public function getServiceById(int $id, ServicesRepository $repository): Respons
 }
 
 
+
+
+
+#[Route('/pourcentageservices', name: 'pourcentageservices')]
+public function pourcentagSservices(ServicesRepository $servicesRepository): Response
+{
+    // Get all services
+    $services = $servicesRepository->findAll();
+
+    // Ensure there are services
+    if (!$services) {
+        $services = [];
+    }
+
+    // Calculate usage percentage for each service
+    $servicesWithUsage = [];
+    foreach ($services as $service) {
+        $usagePercentage = $servicesRepository->getUsagePercentage($service) ?? 0;
+        $servicesWithUsage[] = [
+            'service' => $service,
+            'usagePercentage' => $usagePercentage,
+        ];
+    }
+    dd($servicesWithUsage);
+    return $this->render('services/allserives.html.twig', [
+        'servicesWithUsage' => $servicesWithUsage, // Ensure this is set
+        'currentPage' => 1, // Example page variable
+        'previous' => null,
+        'next' => null,
+    ]);
+}
 
 
 }

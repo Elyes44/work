@@ -32,6 +32,7 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
         $this->parent = false;
 
         $this->blocks = [
+            'stylesheets' => [$this, 'block_stylesheets'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -92,7 +93,11 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
       <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>
     <![endif]-->
     <script src=\"/assets/plugins/nprogress/nprogress.js\"></script>
-</head>
+        ";
+        // line 47
+        yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
+        // line 50
+        yield "</head>
 
 <body class=\"header-fixed sidebar-fixed sidebar-dark header-light\" id=\"body\">
     <script>
@@ -139,13 +144,19 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
                         <li class=\"has-sub\">
                             <a class=\"sidenav-item-link\" href=\"javascript:void(0)\" data-toggle=\"collapse\" data-target=\"#formations\" aria-expanded=\"false\" aria-controls=\"formations\">
                                 <i class=\"mdi mdi-email-mark-as-unread\"></i>
-                                <span class=\"nav-text\">Gestion Rendez vous</span> <b class=\"caret\"></b>
+                                <span class=\"nav-text\">Gestion Rendez-vous</span> <b class=\"caret\"></b>
                             </a>
                             <ul class=\"collapse\" id=\"formations\" data-parent=\"#sidebar-menu\">
                                 <div class=\"sub-menu\">
                                     
                                     <li>
-                                        <a href=\"add_services\">Add Services</a>
+                                        <a href=\"add_services\">Ajouter Services</a>
+                                    </li>
+                                    <li>
+                                        <a href=\"allservices\">Liste des Services</a>
+                                    </li>
+                                    <li>
+                                        <a href=\"afficher_rendezVous\">Liste des Rendez-vous</a>
                                     </li>
                                     
                                 </div>
@@ -208,9 +219,9 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
                         <div class=\"col-lg-8 mx-auto\">
                             <div class=\"card card-default\">
                               ";
-        // line 162
+        // line 171
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 163
+        // line 172
         yield "                            </div>
                         </div>
                     </div>
@@ -275,7 +286,32 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
         yield from [];
     }
 
-    // line 162
+    // line 47
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_stylesheets(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        // line 48
+        yield "        <!-- Additional stylesheets or custom CSS can be added here by child templates -->
+    ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 171
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -310,7 +346,7 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  279 => 162,  214 => 163,  212 => 162,  49 => 1,);
+        return array (  315 => 171,  303 => 48,  290 => 47,  225 => 172,  223 => 171,  100 => 50,  98 => 47,  50 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -361,6 +397,9 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
       <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>
     <![endif]-->
     <script src=\"/assets/plugins/nprogress/nprogress.js\"></script>
+        {% block stylesheets %}
+        <!-- Additional stylesheets or custom CSS can be added here by child templates -->
+    {% endblock %}
 </head>
 
 <body class=\"header-fixed sidebar-fixed sidebar-dark header-light\" id=\"body\">
@@ -408,13 +447,19 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
                         <li class=\"has-sub\">
                             <a class=\"sidenav-item-link\" href=\"javascript:void(0)\" data-toggle=\"collapse\" data-target=\"#formations\" aria-expanded=\"false\" aria-controls=\"formations\">
                                 <i class=\"mdi mdi-email-mark-as-unread\"></i>
-                                <span class=\"nav-text\">Gestion Rendez vous</span> <b class=\"caret\"></b>
+                                <span class=\"nav-text\">Gestion Rendez-vous</span> <b class=\"caret\"></b>
                             </a>
                             <ul class=\"collapse\" id=\"formations\" data-parent=\"#sidebar-menu\">
                                 <div class=\"sub-menu\">
                                     
                                     <li>
-                                        <a href=\"add_services\">Add Services</a>
+                                        <a href=\"add_services\">Ajouter Services</a>
+                                    </li>
+                                    <li>
+                                        <a href=\"allservices\">Liste des Services</a>
+                                    </li>
+                                    <li>
+                                        <a href=\"afficher_rendezVous\">Liste des Rendez-vous</a>
                                     </li>
                                     
                                 </div>

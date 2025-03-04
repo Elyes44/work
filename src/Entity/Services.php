@@ -13,6 +13,8 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\CategorieRepository;
 use App\Repository\ServicesRepository;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
 #[ORM\Entity(repositoryClass: ServicesRepository::class)]
 class Services
@@ -191,6 +193,8 @@ class Services
 
         return $this;
     }
+
+
 }
 
 

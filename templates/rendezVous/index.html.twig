@@ -1,6 +1,6 @@
-{% extends 'home.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block section %}
+{% block body %}
     <div class="container mt-4">
         <h1 class="text-center">Liste des Rendez-vous</h1>
 
@@ -36,7 +36,8 @@
                     <th>Date et Heure de Fin</th>
                     <th>Service</th>
                     <th>Lieu</th>
-                    <th>Antécédents médicaux</th>
+                    <th>Adresse</th>
+                    <th>Telephone</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -49,9 +50,10 @@
                         <td>{{ rendezVous.services.nom }}</td>
                         <td>{{ rendezVous.lieu }}</td>
                         <td>{{ rendezVous.adresse }}</td>
+                        <td>{{ rendezVous.Telephone }}</td>
                         <td>
                             {# Edit Button #}
-                            <a href="{{ path('updaterendez', {'id': rendezVous.id}) }}" class="btn btn-warning btn-sm" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">
+                            <a href="{{ path('updaterendez', {'id': rendezVous.id}) }}" class="btn btn-sm" style="padding: 0.25rem 0.5rem; font-size: 0.875rem; background-color: #4169E1; color: white;">
                                 <i class="fas fa-edit"></i> Modifier
                             </a>
 
