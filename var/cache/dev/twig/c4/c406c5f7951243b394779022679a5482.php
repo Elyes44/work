@@ -108,18 +108,7 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
     <!-- ==================================== ——— WRAPPER ===================================== -->
     <div class=\"wrapper\">
         <!-- Github Link -->
-        <a href=\"https://github.com/tafcoder/sleek-dashboard\" target=\"_blank\" class=\"github-link\">
-            <svg width=\"70\" height=\"70\" viewBox=\"0 0 250 250\" aria-hidden=\"true\">
-                <defs>
-                    <linearGradient id=\"grad1\" x1=\"0%\" y1=\"75%\" x2=\"100%\" y2=\"0%\">
-                        <stop offset=\"0%\" style=\"stop-color:#896def;stop-opacity:1\" />
-                        <stop offset=\"100%\" style=\"stop-color:#482271;stop-opacity:1\" />
-                    </linearGradient>
-                </defs>
-                <path d=\"M 0,0 L115,115 L115,115 L142,142 L250,250 L250,0 Z\" fill=\"url(#grad1)\"></path>
-            </svg>
-            <i class=\"mdi mdi-github-circle\"></i>
-        </a>
+
 
         <!-- ==================================== ——— LEFT SIDEBAR WITH OUT FOOTER ===================================== -->
         <aside class=\"left-sidebar bg-sidebar\">
@@ -219,12 +208,11 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
                 <div class=\"content\">
                     <div class=\"row\">
                         <div class=\"col-lg-8 mx-auto\">
-                            <div class=\"card card-default\">
                               ";
-        // line 173
+        // line 161
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 174
-        yield "                            </div>
+        // line 162
+        yield "                            
                         </div>
                     </div>
                 </div>
@@ -313,7 +301,7 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
         yield from [];
     }
 
-    // line 173
+    // line 161
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -348,7 +336,7 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  317 => 173,  305 => 48,  292 => 47,  227 => 174,  225 => 173,  100 => 50,  98 => 47,  50 => 1,);
+        return array (  305 => 161,  293 => 48,  280 => 47,  215 => 162,  213 => 161,  100 => 50,  98 => 47,  50 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -413,18 +401,7 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
     <!-- ==================================== ——— WRAPPER ===================================== -->
     <div class=\"wrapper\">
         <!-- Github Link -->
-        <a href=\"https://github.com/tafcoder/sleek-dashboard\" target=\"_blank\" class=\"github-link\">
-            <svg width=\"70\" height=\"70\" viewBox=\"0 0 250 250\" aria-hidden=\"true\">
-                <defs>
-                    <linearGradient id=\"grad1\" x1=\"0%\" y1=\"75%\" x2=\"100%\" y2=\"0%\">
-                        <stop offset=\"0%\" style=\"stop-color:#896def;stop-opacity:1\" />
-                        <stop offset=\"100%\" style=\"stop-color:#482271;stop-opacity:1\" />
-                    </linearGradient>
-                </defs>
-                <path d=\"M 0,0 L115,115 L115,115 L142,142 L250,250 L250,0 Z\" fill=\"url(#grad1)\"></path>
-            </svg>
-            <i class=\"mdi mdi-github-circle\"></i>
-        </a>
+
 
         <!-- ==================================== ——— LEFT SIDEBAR WITH OUT FOOTER ===================================== -->
         <aside class=\"left-sidebar bg-sidebar\">
@@ -524,9 +501,8 @@ class __TwigTemplate_e4c1a2bcd52c62d9f71053e8621cf292 extends Template
                 <div class=\"content\">
                     <div class=\"row\">
                         <div class=\"col-lg-8 mx-auto\">
-                            <div class=\"card card-default\">
                               {%block body%}{%endblock%}
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

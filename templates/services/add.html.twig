@@ -123,111 +123,111 @@
 
     {# Form Container #}
     <div class="form-container">
-        <div class="card">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <h3 class="mb-0">Créer une publication</h3>
-                <button class="btn btn-close" onclick="closeForm()">×</button>
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">Créer un nouveau service</h3>
+            <button class="btn btn-close" onclick="closeForm()">×</button>
+        </div>
+        <div class="card-body">
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+            {# Nom Field #}
+            <div class="form-group">
+                {{ form_label(form.nom, "Nom") }}
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control' ~ (form.nom.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                {% if form.nom.vars.errors|length > 0 %}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.nom) }}
+                    </div>
+                {% endif %}
             </div>
-            <div class="card-body">
-                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
-                {# Nom Field #}
-                <div class="form-group">
-                    {{ form_label(form.nom, "Nom") }}
-                    {{ form_widget(form.nom, {'attr': {'class': 'form-control' ~ (form.nom.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
-                    {% if form.nom.vars.errors|length > 0 %}
-                        <div class="invalid-feedback">
-                            {{ form_errors(form.nom) }}
-                        </div>
-                    {% endif %}
-                </div>
-
-                {# Content Field #}
-                <div class="form-group">
-                    {{ form_label(form.content, "Contenu") }}
-                    {{ form_widget(form.content, {'attr': {'class': 'form-control' ~ (form.content.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
-                    {% if form.content.vars.errors|length > 0 %}
-                        <div class="invalid-feedback">
-                            {{ form_errors(form.content) }}
-                        </div>
-                    {% endif %}
-                </div>
-
-                {# Created Field #}
-                <div class="form-group">
-                    {{ form_label(form.created, "Date de création") }}
-                    {{ form_widget(form.created, {'attr': {'class': 'form-control' ~ (form.created.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
-                    {% if form.created.vars.errors|length > 0 %}
-                        <div class="invalid-feedback">
-                            {{ form_errors(form.created) }}
-                        </div>
-                    {% endif %}
-                </div>
-
-                {# Updated Field #}
-                <div class="form-group">
-                    {{ form_label(form.updated, "Date de mise à jour") }}
-                    {{ form_widget(form.updated, {'attr': {'class': 'form-control' ~ (form.updated.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
-                    {% if form.updated.vars.errors|length > 0 %}
-                        <div class="invalid-feedback">
-                            {{ form_errors(form.updated) }}
-                        </div>
-                    {% endif %}
-                </div>
-
-                {# Catégorie Field #}
-                <div class="form-group">
-                    {{ form_label(form.categorie, "Catégorie") }}
-                    {{ form_widget(form.categorie, {'attr': {'class': 'form-control' ~ (form.categorie.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
-                    {% if form.categorie.vars.errors|length > 0 %}
-                        <div class="invalid-feedback">
-                            {{ form_errors(form.categorie) }}
-                        </div>
-                    {% endif %}
-                </div>
-
-                {# Disponible à domicile Field #}
-                <div class="form-group">
-                    {{ form_label(form.dispoDomicile, "Disponible à domicile") }}
-                    {{ form_widget(form.dispoDomicile, {'attr': {'class': 'form-check-input' ~ (form.dispoDomicile.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
-                    {% if form.dispoDomicile.vars.errors|length > 0 %}
-                        <div class="invalid-feedback">
-                            {{ form_errors(form.dispoDomicile) }}
-                        </div>
-                    {% endif %}
-                </div>
-
-                {# Durée Field #}
-                <div class="form-group">
-                    {{ form_label(form.duree, "Durée (en minutes)") }}
-                    {{ form_widget(form.duree, {'attr': {'class': 'form-control' ~ (form.duree.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
-                    {% if form.duree.vars.errors|length > 0 %}
-                        <div class="invalid-feedback">
-                            {{ form_errors(form.duree) }}
-                        </div>
-                    {% endif %}
-                </div>
-
-                {# Prix Field #}
-                <div class="form-group">
-                    {{ form_label(form.prix, "Prix (€)") }}
-                    {{ form_widget(form.prix, {'attr': {'class': 'form-control' ~ (form.prix.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
-                    {% if form.prix.vars.errors|length > 0 %}
-                        <div class="invalid-feedback">
-                            {{ form_errors(form.prix) }}
-                        </div>
-                    {% endif %}
-                </div>
-
-                {# Submit Button #}
-                <div class="card-footer">
-                    <button type="submit" class="btn">Ajouter</button>
-                </div>
-
-                {{ form_end(form) }}
+            {# Content Field #}
+            <div class="form-group">
+                {{ form_label(form.content, "Contenu") }}
+                {{ form_widget(form.content, {'attr': {'class': 'form-control' ~ (form.content.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                {% if form.content.vars.errors|length > 0 %}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.content) }}
+                    </div>
+                {% endif %}
             </div>
+
+            {# Created Field #}
+            <div class="form-group">
+                {{ form_label(form.created, "Date de création") }}
+                {{ form_widget(form.created, {'attr': {'class': 'form-control' ~ (form.created.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                {% if form.created.vars.errors|length > 0 %}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.created) }}
+                    </div>
+                {% endif %}
+            </div>
+
+            {# Updated Field #}
+            <div class="form-group">
+                {{ form_label(form.updated, "Date de mise à jour") }}
+                {{ form_widget(form.updated, {'attr': {'class': 'form-control' ~ (form.updated.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                {% if form.updated.vars.errors|length > 0 %}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.updated) }}
+                    </div>
+                {% endif %}
+            </div>
+
+            {# Catégorie Field #}
+            <div class="form-group">
+                {{ form_label(form.categorie, "Catégorie") }}
+                {{ form_widget(form.categorie, {'attr': {'class': 'form-control' ~ (form.categorie.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                {% if form.categorie.vars.errors|length > 0 %}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.categorie) }}
+                    </div>
+                {% endif %}
+            </div>
+
+            {# Disponible à domicile Field #}
+            <div class="form-group">
+                {{ form_label(form.dispoDomicile, "Disponible à domicile") }}
+                {{ form_widget(form.dispoDomicile, {'attr': {'class': 'form-check-input' ~ (form.dispoDomicile.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                {% if form.dispoDomicile.vars.errors|length > 0 %}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.dispoDomicile) }}
+                    </div>
+                {% endif %}
+            </div>
+
+            {# Durée Field #}
+            <div class="form-group">
+                {{ form_label(form.duree, "Durée (en minutes)") }}
+                {{ form_widget(form.duree, {'attr': {'class': 'form-control' ~ (form.duree.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                {% if form.duree.vars.errors|length > 0 %}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.duree) }}
+                    </div>
+                {% endif %}
+            </div>
+
+            {# Prix Field #}
+            <div class="form-group">
+                {{ form_label(form.prix, "Prix (€)") }}
+                {{ form_widget(form.prix, {'attr': {'class': 'form-control' ~ (form.prix.vars.errors|length > 0 ? ' is-invalid' : '')}}) }}
+                {% if form.prix.vars.errors|length > 0 %}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.prix) }}
+                    </div>
+                {% endif %}
+            </div>
+
+            {# Submit Button #}
+            <div class="card-footer">
+                <button type="submit" class="btn">Ajouter</button>
+            </div>
+
+            {{ form_end(form) }}
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block javascripts %}
