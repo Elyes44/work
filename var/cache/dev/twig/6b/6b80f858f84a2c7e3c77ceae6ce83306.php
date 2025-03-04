@@ -241,23 +241,16 @@ class __TwigTemplate_bdca80fd86c1f0cbf8adc0aba0c7388a extends Template
                                             </p>
 
                                             <!-- Usage Percentage -->
-                                            <div class=\"service-actions\">
-                                                <div class=\"usage-percentage\">
-                                                    <strong>Taux d'utilisation :</strong> ";
-            // line 117
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatNumber(CoreExtension::getAttribute($this->env, $this->source, $context["serviceWithUsage"], "usagePercentage", [], "any", false, false, false, 117), 2), "html", null, true);
-            yield "%
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
                                 ";
             $context['_iterated'] = true;
         }
-        // line 129
+        // line 125
         if (!$context['_iterated']) {
-            // line 124
+            // line 120
             yield "                                <div class=\"col-12\">
                                     <div class=\"alert alert-info\" role=\"alert\">
                                         Aucune services trouvée.
@@ -268,73 +261,73 @@ class __TwigTemplate_bdca80fd86c1f0cbf8adc0aba0c7388a extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['serviceWithUsage'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 130
+        // line 126
         yield "                            </div>
 
                             <!-- Pagination -->
                             ";
-        // line 133
-        if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["services"]) || array_key_exists("services", $context) ? $context["services"] : (function () { throw new RuntimeError('Variable "services" does not exist.', 133, $this->source); })())) > 0)) {
-            // line 134
+        // line 129
+        if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["services"]) || array_key_exists("services", $context) ? $context["services"] : (function () { throw new RuntimeError('Variable "services" does not exist.', 129, $this->source); })())) > 0)) {
+            // line 130
             yield "                            <div class=\"pagination justify-content-center mt-4\">
                                 <ul class=\"pagination\">
                                     <!-- Previous Link -->
                                     ";
-            // line 137
-            if ((array_key_exists("previous", $context) && (isset($context["previous"]) || array_key_exists("previous", $context) ? $context["previous"] : (function () { throw new RuntimeError('Variable "previous" does not exist.', 137, $this->source); })()))) {
-                // line 138
+            // line 133
+            if ((array_key_exists("previous", $context) && (isset($context["previous"]) || array_key_exists("previous", $context) ? $context["previous"] : (function () { throw new RuntimeError('Variable "previous" does not exist.', 133, $this->source); })()))) {
+                // line 134
                 yield "                                        <li class=\"page-item\">
                                             <a class=\"page-link\" href=\"";
-                // line 139
+                // line 135
                 yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pourcentageservices");
                 yield "?page=";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["previous"]) || array_key_exists("previous", $context) ? $context["previous"] : (function () { throw new RuntimeError('Variable "previous" does not exist.', 139, $this->source); })()), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["previous"]) || array_key_exists("previous", $context) ? $context["previous"] : (function () { throw new RuntimeError('Variable "previous" does not exist.', 135, $this->source); })()), "html", null, true);
                 yield "&search=";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 139, $this->source); })()), "request", [], "any", false, false, false, 139), "query", [], "any", false, false, false, 139), "get", ["search"], "method", false, false, false, 139), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 135, $this->source); })()), "request", [], "any", false, false, false, 135), "query", [], "any", false, false, false, 135), "get", ["search"], "method", false, false, false, 135), "html", null, true);
                 yield "\">Précédent</a>
                                         </li>
                                     ";
             }
-            // line 142
+            // line 138
             yield "                                    <!-- Current Page -->
                                     <li class=\"page-item active\">
                                         <span class=\"page-link\">";
-            // line 144
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 144, $this->source); })()), "html", null, true);
+            // line 140
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 140, $this->source); })()), "html", null, true);
             yield "</span>
                                     </li>
                                     <!-- Next Link -->
                                     ";
-            // line 147
-            if ((array_key_exists("next", $context) && (isset($context["next"]) || array_key_exists("next", $context) ? $context["next"] : (function () { throw new RuntimeError('Variable "next" does not exist.', 147, $this->source); })()))) {
-                // line 148
+            // line 143
+            if ((array_key_exists("next", $context) && (isset($context["next"]) || array_key_exists("next", $context) ? $context["next"] : (function () { throw new RuntimeError('Variable "next" does not exist.', 143, $this->source); })()))) {
+                // line 144
                 yield "                                        <li class=\"page-item\">
                                             <a class=\"page-link\" href=\"";
-                // line 149
+                // line 145
                 yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pourcentageservices");
                 yield "?page=";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["next"]) || array_key_exists("next", $context) ? $context["next"] : (function () { throw new RuntimeError('Variable "next" does not exist.', 149, $this->source); })()), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["next"]) || array_key_exists("next", $context) ? $context["next"] : (function () { throw new RuntimeError('Variable "next" does not exist.', 145, $this->source); })()), "html", null, true);
                 yield "&search=";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 149, $this->source); })()), "request", [], "any", false, false, false, 149), "query", [], "any", false, false, false, 149), "get", ["search"], "method", false, false, false, 149), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 145, $this->source); })()), "request", [], "any", false, false, false, 145), "query", [], "any", false, false, false, 145), "get", ["search"], "method", false, false, false, 145), "html", null, true);
                 yield "\">Suivant</a>
                                         </li>
                                     ";
             }
-            // line 152
+            // line 148
             yield "                                </ul>
                             </div>
                             <!-- Page Indicator -->
                             <div class=\"text-center mt-2\">
                                 Page ";
-            // line 156
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 156, $this->source); })()), "html", null, true);
+            // line 152
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 152, $this->source); })()), "html", null, true);
             yield " sur ";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["services"]) || array_key_exists("services", $context) ? $context["services"] : (function () { throw new RuntimeError('Variable "services" does not exist.', 156, $this->source); })()), "getPageCount", [], "method", false, false, false, 156), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["services"]) || array_key_exists("services", $context) ? $context["services"] : (function () { throw new RuntimeError('Variable "services" does not exist.', 152, $this->source); })()), "getPageCount", [], "method", false, false, false, 152), "html", null, true);
             yield "
                             </div>
                             ";
         }
-        // line 159
+        // line 155
         yield "                        </div>
                     </div>
                 </div>
@@ -373,7 +366,7 @@ class __TwigTemplate_bdca80fd86c1f0cbf8adc0aba0c7388a extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  338 => 159,  330 => 156,  324 => 152,  314 => 149,  311 => 148,  309 => 147,  303 => 144,  299 => 142,  289 => 139,  286 => 138,  284 => 137,  279 => 134,  277 => 133,  272 => 130,  261 => 124,  259 => 129,  248 => 117,  239 => 111,  235 => 110,  231 => 109,  227 => 108,  223 => 107,  219 => 106,  215 => 105,  206 => 99,  202 => 98,  193 => 91,  188 => 90,  175 => 79,  162 => 78,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  331 => 155,  323 => 152,  317 => 148,  307 => 145,  304 => 144,  302 => 143,  296 => 140,  292 => 138,  282 => 135,  279 => 134,  277 => 133,  272 => 130,  270 => 129,  265 => 126,  254 => 120,  252 => 125,  239 => 111,  235 => 110,  231 => 109,  227 => 108,  223 => 107,  219 => 106,  215 => 105,  206 => 99,  202 => 98,  193 => 91,  188 => 90,  175 => 79,  162 => 78,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -492,11 +485,7 @@ class __TwigTemplate_bdca80fd86c1f0cbf8adc0aba0c7388a extends Template
                                             </p>
 
                                             <!-- Usage Percentage -->
-                                            <div class=\"service-actions\">
-                                                <div class=\"usage-percentage\">
-                                                    <strong>Taux d'utilisation :</strong> {{ serviceWithUsage.usagePercentage|number_format(2) }}%
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
